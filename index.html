@@ -117,15 +117,6 @@ p,li{text-wrap:pretty;}
   .cc-row{grid-template-columns:1fr;gap:8px;}
 }
 
-.ig-pair{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:600px;margin:0 auto;}
-.ig-phone{background:#0d0d0d;border:1px solid var(--border);border-radius:20px;padding:16px;}
-.ig-phone.bad{border-color:rgba(225,29,72,0.35);}
-.ig-phone.good{border-color:rgba(0,200,150,0.35);}
-.ig-avatar{width:46px;height:46px;border-radius:50%;background:var(--grad);margin-bottom:10px;}
-.ig-handle{font-size:12.5px;font-weight:700;margin-bottom:8px;color:#fff;}
-.ig-bio{font-size:11.5px;color:var(--text2);line-height:1.5;}
-@media(max-width:600px){.ig-pair{grid-template-columns:1fr;}}
-
 /* ============ DEPOIMENTOS — phone frame ============ */
 .phone-frame{
   width:290px;margin:0 auto;background:#0a0a0a;border:8px solid #1c1c1c;border-radius:38px;
@@ -140,15 +131,6 @@ p,li{text-wrap:pretty;}
 .tg-name{font-size:12px;font-weight:700;margin-bottom:5px;}
 .tg-msg{font-size:11.5px;color:rgba(255,255,255,0.82);line-height:1.5;}
 .tg-time{font-size:9px;color:rgba(255,255,255,0.28);margin-top:6px;text-align:right;}
-
-/* ============ DADOS ============ */
-.stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
-.stat-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:26px 22px;text-align:left;}
-.stat-clip{font-family:Georgia,'Times New Roman',serif;font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--text3);border-bottom:1px solid var(--border);padding-bottom:10px;margin-bottom:16px;}
-.stat-num{font-size:36px;font-weight:900;line-height:1;}
-.stat-desc{font-size:13px;color:var(--text2);margin-top:10px;}
-@media(max-width:820px){.stat-grid{grid-template-columns:1fr;}}
-.dados-closing{text-align:center;font-size:17px;font-weight:700;color:var(--text2);margin-top:44px;}
 
 /* ============ CURRÍCULO ============ */
 .curr-grid{display:grid;grid-template-columns:.85fr 1.3fr;gap:50px;align-items:start;}
@@ -261,22 +243,22 @@ footer p{color:var(--text3);font-size:11.5px;}
   </div>
   <div class="container">
     <div class="hero-content reveal in">
-      <span class="eyebrow">Workshop ao vivo · 1ª edição</span>
+      <span class="eyebrow">1ª edição</span>
       <h1>Construa em 1 dia seu posicionamento com conteúdos e anúncios de imóveis que fecham venda todo mês, com um canal próprio de <span class="grad-text">comprador&nbsp;qualificado</span>.</h1>
       <p class="sub">Vamos construir isso juntos — o mesmo sistema que a Arrive já aplica em mais de 200 estruturas digitais desde 2012. No orgânico, 41% dos compradores que usaram redes sociais na busca encontraram o corretor através do conteúdo, não do anúncio pago nem do portal (NAR, 2025). No tráfego pago, a Meta usa quem se conecta com seu perfil pra segmentar melhor qualquer campanha. E nós construiremos os dois ao vivo, nesse workshop.</p>
       <div class="badges">
-        <span class="badge">200+ estruturas implementadas</span>
-        <span class="badge">Foco exclusivo em imobiliário</span>
+        <span class="badge">200+ estruturas digitais implementadas</span>
+        <span class="badge">Foco exclusivo no mercado imobiliário</span>
         <span class="badge">Desde 2012 no digital</span>
       </div>
       <div class="hero-cta-row">
-        <a href="#investimento" class="btn">Comprar&nbsp;Ingresso <svg class="ic"><use href="#ic-arrow"/></svg></a>
-        <div class="price-inline"><span class="old">De R$47</span><span class="new">R$ 19,00</span></div>
+        <a href="#investimento" class="btn">Comprar Ingresso | Lote 1 <svg class="ic"><use href="#ic-arrow"/></svg></a>
+        <div class="price-inline"><span class="new">R$ 19,00</span></div>
       </div>
       <div class="progress-note">
         <span id="progress-pct">0%</span>
         <div class="progress-bar-bg"><div class="progress-bar-fill" id="progress-fill"></div></div>
-        <span>dos ingressos&nbsp;vendidos</span>
+        <span>das vagas&nbsp;preenchidas</span>
       </div>
     </div>
   </div>
@@ -286,7 +268,6 @@ footer p{color:var(--text3);font-size:11.5px;}
 <section class="section section-light">
   <div class="container">
     <div class="head-center reveal">
-      <span class="eyebrow">Por que isso converte mais</span>
       <h2>O corretor que vende bem não depende mais só de&nbsp;anúncio. Por&nbsp;quê?</h2>
       <p>O comprador de imóvel mudou de canal — ele já pesquisa, compara e decide boa parte da compra antes de falar com qualquer corretor. Quem só tem anúncio, sem posicionamento e sem conteúdo por trás, paga caro por clique de gente que nem sabia o que estava procurando. Quem tem os 3 alinhados, aparece pro comprador certo antes de gastar um real em&nbsp;tráfego.</p>
     </div>
@@ -335,17 +316,16 @@ footer p{color:var(--text3);font-size:11.5px;}
 <section class="section section-light">
   <div class="container">
     <div class="head-center reveal">
-      <span class="eyebrow">Na prática, é isso que muda</span>
       <h2>Sem sistema vs. com&nbsp;sistema</h2>
     </div>
 
     <div class="compare-feature reveal">
       <div class="cf-card bad">
-        <span class="cf-tag"><svg class="ic"><use href="#ic-x"/></svg> Sem sistema — o primeiro contato</span>
+        <span class="cf-tag"><svg class="ic"><use href="#ic-x"/></svg> O primeiro contato</span>
         <p>Lead caindo direto no WhatsApp, sem nenhum contexto de quem ele é ou o que&nbsp;procura.</p>
       </div>
       <div class="cf-card good">
-        <span class="cf-tag"><svg class="ic"><use href="#ic-check"/></svg> Com sistema — o primeiro contato</span>
+        <span class="cf-tag"><svg class="ic"><use href="#ic-check"/></svg> O primeiro contato</span>
         <p>Lead chegando com contexto — o conteúdo já filtrou antes do primeiro&nbsp;"oi".</p>
       </div>
     </div>
@@ -358,7 +338,7 @@ footer p{color:var(--text3);font-size:11.5px;}
       </div>
       <div class="cc-row reveal">
         <span class="cc-label">A bio</span>
-        <span class="cc-bad"><svg class="ic"><use href="#ic-x"/></svg> A mesma bio genérica que 9 em cada 10 corretores da região&nbsp;usam</span>
+        <span class="cc-bad"><svg class="ic"><use href="#ic-x"/></svg> A mesma bio genérica que 9 em cada 10 corretores da região usam ("Corretor de imóveis | CRECI ativo | Atendo toda a&nbsp;cidade")</span>
         <span class="cc-good"><svg class="ic"><use href="#ic-check"/></svg> Bio com nicho e território declarados — o visitante sabe em 5 segundos se é pra&nbsp;ele</span>
       </div>
       <div class="cc-row reveal">
@@ -387,22 +367,6 @@ footer p{color:var(--text3);font-size:11.5px;}
         <span class="cc-good"><svg class="ic"><use href="#ic-check"/></svg> Criativo construído a partir do seu próprio posicionamento — não genérico, não&nbsp;copiado</span>
       </div>
     </div>
-
-    <div style="margin-top:56px;">
-      <p style="text-align:center;font-size:13px;color:rgba(0,0,0,.5);margin-bottom:20px;">A bio, na&nbsp;prática:</p>
-      <div class="ig-pair reveal">
-        <div class="ig-phone bad">
-          <div class="ig-avatar"></div>
-          <div class="ig-handle">@corretor.autonomo</div>
-          <div class="ig-bio">Corretor de imóveis<br>CRECI ativo<br>Atendo toda a cidade<br>DM para mais informações</div>
-        </div>
-        <div class="ig-phone good">
-          <div class="ig-avatar"></div>
-          <div class="ig-handle">@marina.mcmv.campinas</div>
-          <div class="ig-bio">Especialista em primeiro imóvel · Campinas<br>Do FGTS à chave, sem surpresa<br>8 anos de mercado<br>Fale comigo</div>
-        </div>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -410,15 +374,14 @@ footer p{color:var(--text3);font-size:11.5px;}
 <section class="section bg-depoimentos">
   <div class="container">
     <div class="head-center reveal">
-      <span class="eyebrow">Prova social</span>
       <h2>O que dizem os clientes&nbsp;Arrive</h2>
     </div>
     <div class="phone-frame reveal">
       <div class="phone-notch"></div>
       <div class="phone-screen">
-        <div class="tg-card"><div class="tg-name" style="color:#8fd3ff">Isabela Toledo</div><div class="tg-msg">Esse número vai muito além de uma métrica. [...] Mas o sucesso dessa empresa é muito mais profundo. Obrigada por caminharem comigo, por acreditarem, por entregarem mais do que técnica: alma, respeito e verdade.</div><div class="tg-time">20:22</div></div>
+        <div class="tg-card"><div class="tg-name" style="color:#8fd3ff">Isabela Toledo</div><div class="tg-msg">Esse número vai muito além de uma métrica. [...] Eu sei que resultados financeiros são importantes e necessários. Mas o sucesso dessa empresa é muito mais profundo. [...] Obrigada por caminharem comigo, por acreditarem, por entregarem mais do que técnica: alma, respeito e verdade.</div><div class="tg-time">20:22</div></div>
         <div class="tg-card"><div class="tg-name" style="color:#7ee787">Leonardo Marques</div><div class="tg-msg">Acredito que esse mês será um dos melhores ou na vdd o melhor até hj.<br>Esse mês se Deus quiser bato minha meta.</div><div class="tg-time">11:46</div></div>
-        <div class="tg-card"><div class="tg-name" style="color:#ffb86b">Pietra Marques</div><div class="tg-msg">Amem!!! As mudanças estão começando a surtir efeito! Boraaaa.</div><div class="tg-time">11:49</div></div>
+        <div class="tg-card"><div class="tg-name" style="color:#ffb86b">Pietra Marques</div><div class="tg-msg">As mudanças estão começando a surtir efeito! Boraaaa.</div><div class="tg-time">11:49</div></div>
         <div class="tg-card"><div class="tg-name" style="color:#8fd3ff">Cliente Arrive</div><div class="tg-msg">Hoje consegui fechar uma venda com uma cliente que veio quente do conteúdo. Mesmo passando por fases mais difíceis, o processo funciona.</div><div class="tg-time">22:51</div></div>
         <div class="tg-card"><div class="tg-name" style="color:#7ee787">Cliente Arrive</div><div class="tg-msg">O norte que o Miguel deu no vídeo da casa do cliente foi muito importante pra nós.</div><div class="tg-time">18:03</div></div>
       </div>
@@ -426,29 +389,11 @@ footer p{color:var(--text3);font-size:11.5px;}
   </div>
 </section>
 
-<!-- ============================================================ DADOS -->
-<section class="section" style="background:#000;">
-  <div class="container">
-    <div class="head-center reveal">
-      <span class="eyebrow">Se você ainda acha que isso não faz diferença</span>
-      <h2>Presta atenção nesses&nbsp;dados</h2>
-    </div>
-    <div class="stat-grid">
-      <div class="stat-card reveal"><div class="stat-clip">NAR · 2025</div><div class="stat-num" data-count="41">0</div><div class="stat-desc">dos compradores encontraram o corretor pelo conteúdo — não pelo anúncio, não pelo&nbsp;portal</div></div>
-      <div class="stat-card reveal"><div class="stat-clip">Case real Arrive</div><div class="stat-num" data-count="80">0</div><div class="stat-desc">menos leads atendidos, depois de alinhar posicionamento, conteúdo e&nbsp;anúncio</div></div>
-      <div class="stat-card reveal"><div class="stat-clip">Case real Arrive</div><div class="stat-num" data-count="3" data-suffix="x">0</div><div class="stat-desc">mais vendas — mesmo cliente, mesmo período, com o sistema&nbsp;rodando</div></div>
-    </div>
-    <p class="dados-closing reveal">O mercado mudou. Existe um jeito de operar nesse novo&nbsp;cenário.</p>
-  </div>
-</section>
-
 <!-- ============================================================ CURRÍCULO -->
 <section class="section bg-curriculo">
   <div class="container curr-grid">
     <div class="curr-left reveal">
-      <span class="eyebrow">Conteúdo do Workshop</span>
-      <h2>O que você constrói no dia&nbsp;08/08</h2>
-      <p>Você constrói seu sistema enquanto executa — não é teoria pra aplicar&nbsp;depois.</p>
+      <h2>O que você vai construir no Workshop Imob In&nbsp;Digital</h2>
     </div>
     <div class="curr-card">
       <div class="curr-item reveal"><div class="n">01</div><div><h4>Diagnóstico do sistema</h4><p>Você vai descobrir exatamente onde seu sistema está quebrado hoje: se é o posicionamento que não diz pra quem você vende, o conteúdo que não atrai ninguém específico, ou o anúncio que não sabe pra quem apontar. Antes de construir qualquer coisa, você sabe onde&nbsp;focar.</p></div></div>
@@ -473,9 +418,7 @@ footer p{color:var(--text3);font-size:11.5px;}
 <section class="section section-light">
   <div class="container cron-grid">
     <div class="reveal">
-      <span class="eyebrow">08/08 · Ao vivo · Online</span>
       <h2>Cronograma</h2>
-      <p class="meta">O dia inteiro segue esse&nbsp;cronograma.</p>
     </div>
     <div class="cron-rows reveal">
       <div class="cron-row"><span class="time">09h30</span><span class="label">Início</span></div>
@@ -491,22 +434,22 @@ footer p{color:var(--text3);font-size:11.5px;}
 <section id="investimento" class="section bg-depoimentos">
   <div class="container">
     <div class="head-center reveal">
-      <span class="eyebrow">Esse é o investimento</span>
-      <h2>Pra participar do&nbsp;Workshop</h2>
+      <h2>Esse é o&nbsp;investimento</h2>
     </div>
     <div class="inv-grid">
       <div class="custaria-list reveal">
-        <div class="custaria-item"><span>Consultoria de posicionamento digital</span><span class="old-price">R$997</span></div>
-        <div class="custaria-item"><span>Planejamento de conteúdo estratégico</span><span class="old-price">R$997</span></div>
-        <div class="custaria-item"><span>Produção de criativo/anúncio</span><span class="old-price">R$497</span></div>
-        <div class="custaria-total"><span>Total separado</span><span>R$2.491</span></div>
+        <div class="custaria-item"><span>Consultoria de posicionamento digital</span><span class="old-price">A partir de R$ 997,00</span></div>
+        <div class="custaria-item"><span>Planejamento de conteúdo estratégico</span><span class="old-price">A partir de R$ 997,00</span></div>
+        <div class="custaria-item"><span>Produção de criativo/anúncio profissional</span><span class="old-price">A partir de R$ 497,00</span></div>
+        <div class="custaria-total"><span>Total separado</span><span>R$ 2.491,00</span></div>
+        <p style="margin-top:18px;font-size:14px;color:var(--text2);">Seu investimento no Workshop: <b style="color:#fff;">R$ 19,00</b></p>
       </div>
       <div class="ticket reveal">
         <div class="ticket-photo"></div>
         <div class="ticket-body">
           <div class="ticket-date"><svg class="ic"><use href="#ic-calendar"/></svg> 08 de Agosto de 2026 · 09h30 às 17h30</div>
-          <div class="ticket-desc">Um dia inteiro construindo o sistema que faz você fechar venda todo&nbsp;mês.</div>
-          <div class="ticket-price"><span class="old">De R$47</span><span class="new">R$ 19,00</span></div>
+          <div class="ticket-desc">Formato: Ao vivo, online<br>Inclui: acesso ao vivo + materiais de apoio<br>Não inclui: gravação (order bump — R$&nbsp;97,00)</div>
+          <div class="ticket-price"><span class="new">R$ 19,00</span></div>
           <a href="#" class="btn">Comprar&nbsp;Ingresso</a>
           <div class="barcode"></div>
           <div class="ticket-progress" id="ticket-progress-text"></div>
@@ -529,8 +472,7 @@ footer p{color:var(--text3);font-size:11.5px;}
 <section class="section" style="background:#0a0a0a;">
   <div class="container">
     <div class="head-center reveal">
-      <span class="eyebrow">Quem somos</span>
-      <h2>A Arrive não nasceu de&nbsp;teoria</h2>
+      <h2>Quem&nbsp;somos</h2>
     </div>
     <div class="qs-grid">
       <div class="qs-card reveal">
@@ -572,7 +514,7 @@ footer p{color:var(--text3);font-size:11.5px;}
   <div class="container">
     <div class="head-center reveal"><h2>FAQ</h2></div>
     <div id="faq-list">
-      <div class="faq-item"><div class="faq-q">O evento é online?<span class="plus"><svg class="ic"><use href="#ic-plus"/></svg></span></div><div class="faq-a">Sim, 100% ao vivo.</div></div>
+      <div class="faq-item"><div class="faq-q">O evento é online?<span class="plus"><svg class="ic"><use href="#ic-plus"/></svg></span></div><div class="faq-a">Sim, 100% ao vivo. (Plataforma a definir.)</div></div>
       <div class="faq-item"><div class="faq-q">Quantas coisas eu preciso construir pra ter o sistema completo?<span class="plus"><svg class="ic"><use href="#ic-plus"/></svg></span></div><div class="faq-a">3: posicionamento, conteúdo e anúncio. Você constrói os 3 no mesmo dia.</div></div>
       <div class="faq-item"><div class="faq-q">Isso funciona pra quem ainda depende de portal ou indicação?<span class="plus"><svg class="ic"><use href="#ic-plus"/></svg></span></div><div class="faq-a">É exatamente pra esse cenário. A ideia é sair da dependência e passar a ter controle sobre a geração de oportunidades.</div></div>
       <div class="faq-item"><div class="faq-q">Vou sair só com conhecimento ou com algo pronto?<span class="plus"><svg class="ic"><use href="#ic-plus"/></svg></span></div><div class="faq-a">Você sai com a base construída: posicionamento definido, conteúdo planejado e pelo menos 1 anúncio produzido.</div></div>
@@ -639,7 +581,7 @@ counters.forEach(c=>counterIO.observe(c));
   requestAnimationFrame(()=>{
     document.getElementById('progress-fill').style.width = pct+'%';
     document.getElementById('progress-pct').textContent = pct+'%';
-    document.getElementById('ticket-progress-text').textContent = pct+'% dos ingressos vendidos a R$19';
+    document.getElementById('ticket-progress-text').textContent = pct+'% das vagas preenchidas';
   });
 })();
 
