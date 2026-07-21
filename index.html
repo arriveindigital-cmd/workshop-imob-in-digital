@@ -54,18 +54,21 @@ p,li{text-wrap:pretty;}
 
 /* ============ HERO ============ */
 #hero{
-  min-height:0;display:flex;align-items:flex-start;
-  background:#000 url(assets/bg-hero-desktop.jpg) center right/cover no-repeat;
-  padding:200px 0 110px;position:relative;
+  position:relative;overflow:hidden;
+  background:
+    radial-gradient(ellipse 900px 700px at 100% 0%, rgba(124,58,237,0.35), transparent 60%),
+    radial-gradient(ellipse 700px 600px at 100% 100%, rgba(225,29,72,0.18), transparent 55%),
+    #000;
+  padding:130px 40px 90px;
 }
-#hero::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.68) 32%, rgba(0,0,0,0.28) 48%, rgba(0,0,0,0.02) 62%);z-index:0;}
-.hero-top{position:absolute;top:0;left:0;right:0;z-index:2;display:flex;justify-content:space-between;align-items:center;padding:26px 24px;max-width:1120px;margin:0 auto;}
+.hero-top{position:absolute;top:0;left:0;right:0;z-index:2;display:flex;justify-content:space-between;align-items:center;padding:26px 40px;}
 .hero-logo{height:26px;}
 .hero-date{display:inline-flex;gap:9px;align-items:center;font-size:12px;color:rgba(255,255,255,0.8);border:1px solid rgba(255,255,255,0.15);border-radius:100px;padding:7px 15px;background:rgba(0,0,0,0.3);backdrop-filter:blur(6px);}
-.hero-content{position:relative;z-index:1;max-width:640px;}
+.hero-row{display:flex;align-items:center;gap:48px;max-width:1400px;margin:0 auto;}
+.hero-content{position:relative;z-index:1;flex:1 1 480px;max-width:560px;min-width:0;}
 .hero-content .eyebrow{display:block;margin-bottom:16px;}
-.hero-content h1{font-size:34px;margin:0 0 18px;}
-.hero-content p.sub{font-size:14.5px;color:rgba(255,255,255,0.65);margin-bottom:20px;max-width:600px;}
+.hero-content h1{font-size:32px;margin:0 0 18px;}
+.hero-content p.sub{font-size:14px;color:rgba(255,255,255,0.65);margin-bottom:20px;}
 .hero .badges{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:30px;}
 .badge{font-size:11.5px;font-weight:700;background:rgba(124,58,237,0.14);border:1px solid var(--border-accent);color:#c4b5fd;padding:7px 13px;border-radius:100px;}
 .hero-cta-row{display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
@@ -75,10 +78,24 @@ p,li{text-wrap:pretty;}
 .progress-note{margin-top:20px;font-size:12.5px;color:rgba(255,255,255,0.55);display:flex;align-items:center;gap:10px;max-width:340px;}
 .progress-bar-bg{flex:1;height:6px;border-radius:100px;background:rgba(255,255,255,0.12);overflow:hidden;}
 .progress-bar-fill{height:100%;border-radius:100px;background:var(--grad);width:0%;transition:width 1.4s cubic-bezier(.16,1,.3,1);}
-@media(max-width:760px){
-  #hero{background-image:url(assets/bg-hero-mobile.jpg);padding:110px 0 60px;}
-  #hero::before{background:linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.8) 40%, rgba(0,0,0,0.92) 100%);}
-  .hero-content{max-width:100%;}
+.hero-photo-col{flex:0 0 clamp(280px, 34vw, 460px);align-self:stretch;position:relative;overflow:hidden;border-radius:24px;min-height:560px;}
+.hero-photo-col img{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% center;
+  -webkit-mask-image:linear-gradient(to right, transparent 0, black 90px);
+  mask-image:linear-gradient(to right, transparent 0, black 90px);
+}
+@media(max-width:1000px){
+  .hero-row{flex-direction:column;align-items:stretch;gap:0;}
+  .hero-photo-col{display:none;}
+  #hero{
+    padding:110px 24px 70px;
+    background:
+      radial-gradient(ellipse 900px 700px at 100% 0%, rgba(124,58,237,0.4), transparent 60%),
+      #000 url(assets/bg-hero-mobile.jpg) center/cover no-repeat;
+    background-blend-mode:normal;
+  }
+  #hero::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.82) 55%, rgba(0,0,0,0.94) 100%);}
+  .hero-content{position:relative;z-index:1;max-width:100%;flex:none;}
   .hero-content h1{font-size:27px;}
   .hero-top{padding:20px;}
 }
@@ -232,7 +249,7 @@ footer p{color:var(--text3);font-size:11.5px;}
     <img src="assets/logo-workshop.png" class="hero-logo" alt="Workshop Imob In Digital">
     <div class="hero-date"><svg class="ic"><use href="#ic-calendar"/></svg> 08 de Agosto de 2026 · 09h30 às 17h30</div>
   </div>
-  <div class="container">
+  <div class="hero-row">
     <div class="hero-content reveal in">
       <span class="eyebrow">1ª edição</span>
       <h1>Construa em 1 dia seu posicionamento com conteúdos e anúncios de imóveis que fecham venda todo mês, com um canal próprio de <span class="grad-text">comprador&nbsp;qualificado</span>.</h1>
@@ -251,6 +268,9 @@ footer p{color:var(--text3);font-size:11.5px;}
         <div class="progress-bar-bg"><div class="progress-bar-fill" id="progress-fill"></div></div>
         <span>das vagas&nbsp;preenchidas</span>
       </div>
+    </div>
+    <div class="hero-photo-col reveal in">
+      <img src="assets/bg-hero-desktop.jpg" alt="Erik Tafuri e Miguel Maulim">
     </div>
   </div>
 </section>
