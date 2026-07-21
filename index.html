@@ -95,16 +95,7 @@ p,li{text-wrap:pretty;}
 @media(max-width:560px){.mec-cols{grid-template-columns:1fr;}}
 
 /* ============ SEM SISTEMA VS COM SISTEMA ============ */
-.compare-feature{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:840px;margin:0 auto;}
-.cf-card{border-radius:16px;padding:26px 28px;background:var(--card);}
-.cf-card.bad{border:1px solid rgba(225,29,72,0.35);}
-.cf-card.good{border:1px solid rgba(0,200,150,0.35);}
-.cf-tag{display:flex;align-items:center;gap:8px;font-size:11.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;margin-bottom:16px;}
-.cf-card.bad .cf-tag{color:#fb7185;}
-.cf-card.good .cf-tag{color:#34d399;}
-.cf-card p{font-size:14.5px;line-height:1.6;color:rgba(255,255,255,0.85);}
-
-.compact-compare{max-width:840px;margin:40px auto 0;display:flex;flex-direction:column;gap:10px;}
+.compact-compare{max-width:840px;margin:0 auto;display:flex;flex-direction:column;gap:10px;}
 .cc-row{display:grid;grid-template-columns:100px 1fr 1fr;gap:16px;align-items:center;padding:16px 20px;background:var(--card);border-radius:12px;border:1px solid var(--border);}
 .cc-label{font-size:11.5px;font-weight:800;color:var(--text3);text-transform:uppercase;letter-spacing:.05em;}
 .cc-bad,.cc-good{font-size:13px;line-height:1.5;display:flex;gap:8px;}
@@ -113,7 +104,6 @@ p,li{text-wrap:pretty;}
 .cc-bad .ic{color:#fb7185;margin-top:3px;}
 .cc-good .ic{color:#34d399;margin-top:3px;}
 @media(max-width:760px){
-  .compare-feature{grid-template-columns:1fr;}
   .cc-row{grid-template-columns:1fr;gap:8px;}
 }
 
@@ -319,17 +309,6 @@ footer p{color:var(--text3);font-size:11.5px;}
       <h2>Sem sistema vs. com&nbsp;sistema</h2>
     </div>
 
-    <div class="compare-feature reveal">
-      <div class="cf-card bad">
-        <span class="cf-tag"><svg class="ic"><use href="#ic-x"/></svg> O primeiro contato</span>
-        <p>Lead caindo direto no WhatsApp, sem nenhum contexto de quem ele é ou o que&nbsp;procura.</p>
-      </div>
-      <div class="cf-card good">
-        <span class="cf-tag"><svg class="ic"><use href="#ic-check"/></svg> O primeiro contato</span>
-        <p>Lead chegando com contexto — o conteúdo já filtrou antes do primeiro&nbsp;"oi".</p>
-      </div>
-    </div>
-
     <div class="compact-compare">
       <div class="cc-row reveal">
         <span class="cc-label">O post</span>
@@ -345,6 +324,11 @@ footer p{color:var(--text3);font-size:11.5px;}
         <span class="cc-label">O anúncio</span>
         <span class="cc-bad"><svg class="ic"><use href="#ic-x"/></svg> Anúncio rodando sem nenhum posicionamento por trás — pagando caro por clique de quem só estava&nbsp;curioso</span>
         <span class="cc-good"><svg class="ic"><use href="#ic-check"/></svg> Anúncio construído em cima do posicionamento — o clique já vem de quem tem intenção&nbsp;real</span>
+      </div>
+      <div class="cc-row reveal">
+        <span class="cc-label">O primeiro contato</span>
+        <span class="cc-bad"><svg class="ic"><use href="#ic-x"/></svg> Lead caindo direto no WhatsApp, sem nenhum contexto de quem ele é ou o que&nbsp;procura</span>
+        <span class="cc-good"><svg class="ic"><use href="#ic-check"/></svg> Lead chegando com contexto — o conteúdo já filtrou antes do primeiro&nbsp;"oi"</span>
       </div>
       <div class="cc-row reveal">
         <span class="cc-label">O nicho</span>
