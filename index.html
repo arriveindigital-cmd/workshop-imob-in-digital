@@ -61,42 +61,45 @@ p,li{text-wrap:pretty;}
 
 .hero-top{
   position:absolute;top:0;left:0;right:0;z-index:3;
-  display:flex;justify-content:space-between;align-items:center;
-  padding:18px 40px;
   background:rgba(8,8,8,0.4);
   backdrop-filter:blur(16px) saturate(140%);
   -webkit-backdrop-filter:blur(16px) saturate(140%);
   border-bottom:1px solid rgba(255,255,255,0.08);
 }
-.hero-logo{height:40px;}
-.hero-date{display:inline-flex;gap:9px;align-items:center;font-size:12px;color:rgba(255,255,255,0.8);border:1px solid rgba(255,255,255,0.15);border-radius:100px;padding:7px 15px;background:rgba(0,0,0,0.25);}
+.hero-top-inner{max-width:1800px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:20px 40px;}
+.hero-logo{height:48px;}
+.hero-date{display:inline-flex;gap:10px;align-items:center;font-size:14px;color:rgba(255,255,255,0.85);border:1px solid rgba(255,255,255,0.15);border-radius:100px;padding:10px 20px;background:rgba(0,0,0,0.25);}
 
-.hero-row{position:relative;z-index:1;max-width:1560px;margin:0 auto;min-height:94vh;display:flex;align-items:center;padding:130px 40px 70px;box-sizing:border-box;}
-.hero-content{position:relative;z-index:1;max-width:580px;}
+/* botão vidro fumê — borda em degradê, fundo escuro desfocado */
+.btn-glass{
+  background-image:linear-gradient(rgba(30,30,34,0.55),rgba(30,30,34,0.55)), var(--grad);
+  background-origin:border-box;background-clip:padding-box, border-box;
+  border:2px solid transparent;
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  color:#fff;box-shadow:0 8px 26px rgba(0,0,0,0.35);
+}
+
+.hero-row{position:relative;z-index:1;max-width:1800px;margin:0 auto;min-height:94vh;display:flex;align-items:center;padding:130px 40px 70px;box-sizing:border-box;}
+.hero-content{position:relative;z-index:1;max-width:560px;}
 .hero-content .eyebrow{display:block;margin-bottom:16px;color:rgba(255,255,255,0.45);}
-.hero-content h1{font-size:34px;margin:0 0 20px;}
+.hero-content h1{font-size:30px;margin:0 0 20px;}
 .hero-content p.sub{font-size:14.5px;color:rgba(255,255,255,0.65);margin-bottom:28px;}
 
-.hero-cta-block{max-width:520px;}
+.hero-cta-block{display:inline-block;}
 .hero-cta-top{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-bottom:14px;}
 .price-inline{display:flex;flex-direction:column;line-height:1.15;}
-.price-inline .new{font-size:24px;font-weight:900;}
-.progress-bar-bg{height:8px;border-radius:100px;background:rgba(255,255,255,0.12);overflow:hidden;}
-.progress-bar-fill{height:100%;border-radius:100px;background:var(--grad);width:0%;transition:width 1.4s cubic-bezier(.16,1,.3,1);}
+.price-inline .old{color:rgba(255,255,255,0.4);text-decoration:line-through;font-size:13px;}
+.price-inline .new{font-size:19px;font-weight:700;}
+.progress-bar-bg{height:7px;border-radius:4px;background:rgba(255,255,255,0.14);overflow:hidden;}
+.progress-bar-fill{height:100%;border-radius:4px;background:rgba(255,255,255,0.85);width:0%;transition:width 1.4s cubic-bezier(.16,1,.3,1);}
 .progress-caption{margin-top:10px;font-size:12.5px;color:rgba(255,255,255,0.5);}
 .progress-caption b{color:#fff;font-weight:800;}
 
 .hero-photo{
   position:absolute;right:0;bottom:0;z-index:1;
-  height:clamp(420px, 60vh, 540px);width:auto;max-width:42%;
+  height:clamp(440px, 88vh, 940px);width:auto;max-width:calc(100% - 640px);
   object-fit:contain;object-position:bottom right;
   filter:drop-shadow(0 30px 60px rgba(124,58,237,0.35));
-}
-@media(min-width:1400px){
-  .hero-photo{height:clamp(520px, 74vh, 680px);max-width:50%;}
-}
-@media(min-width:1700px){
-  .hero-photo{height:clamp(580px, 80vh, 760px);max-width:55%;}
 }
 @media(max-width:1000px){
   #hero{min-height:0;}
@@ -109,26 +112,34 @@ p,li{text-wrap:pretty;}
   }
   #hero::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.82) 55%, rgba(0,0,0,0.94) 100%);}
   .hero-content{position:relative;z-index:1;max-width:100%;}
-  .hero-content h1{font-size:27px;}
-  .hero-top{padding:14px 20px;}
-  .hero-logo{height:30px;}
+  .hero-content h1{font-size:26px;}
+  .hero-cta-block{display:block;}
+  .hero-top-inner{padding:14px 20px;}
+  .hero-logo{height:32px;}
+  .hero-date{font-size:11px;padding:7px 14px;}
 }
 
-/* ============ STICKY CTA (aparece ao rolar) ============ */
+/* ============ STICKY CTA (card flutuante embaixo, ao rolar) ============ */
 .sticky-cta{
-  position:fixed;top:0;left:0;right:0;z-index:80;
-  transform:translateY(-100%);transition:transform .35s ease;
-  background:rgba(8,8,8,0.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
-  border-bottom:1px solid rgba(255,255,255,0.08);
-  padding:12px 24px;
+  position:fixed;left:50%;bottom:24px;z-index:80;
+  transform:translate(-50%, 160%);transition:transform .35s ease;
+  background:rgba(24,24,27,0.6);
+  backdrop-filter:blur(16px) saturate(140%);-webkit-backdrop-filter:blur(16px) saturate(140%);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:16px;
+  padding:14px 20px;
+  box-shadow:0 20px 50px rgba(0,0,0,0.45);
 }
-.sticky-cta.show{transform:translateY(0);}
-.sticky-cta-inner{max-width:1120px;margin:0 auto;display:flex;align-items:center;gap:18px;}
+.sticky-cta.show{transform:translate(-50%, 0);}
+.sticky-cta-inner{display:flex;align-items:center;gap:16px;}
 .sticky-cta .btn{padding:11px 20px;font-size:13px;flex-shrink:0;}
-.sticky-progress-wrap{flex:1;display:flex;align-items:center;gap:12px;max-width:280px;}
+.sticky-price{display:flex;flex-direction:column;line-height:1.1;flex-shrink:0;}
+.sticky-price .old{color:rgba(255,255,255,0.4);text-decoration:line-through;font-size:10.5px;}
+.sticky-price .new{font-size:15px;font-weight:700;color:#fff;}
+.sticky-progress-wrap{display:flex;align-items:center;gap:10px;width:180px;}
 .sticky-progress-wrap .progress-bar-bg{flex:1;height:6px;}
-.sticky-pct{font-size:11.5px;color:rgba(255,255,255,0.65);white-space:nowrap;}
-@media(max-width:640px){.sticky-progress-wrap{display:none;}}
+.sticky-pct{font-size:11px;color:rgba(255,255,255,0.65);white-space:nowrap;}
+@media(max-width:700px){.sticky-progress-wrap{display:none;}.sticky-price{display:none;}}
 
 /* ============ TICKER DE BENEFÍCIOS ============ */
 .ticker-wrap{background:#0a0a0a;border-bottom:1px solid var(--border);padding:18px 0;overflow:hidden;}
@@ -283,8 +294,10 @@ footer p{color:var(--text3);font-size:11.5px;}
 <!-- ============================================================ HERO -->
 <section id="hero">
   <div class="hero-top">
-    <img src="assets/logo-workshop.png" class="hero-logo" alt="Workshop Imob In Digital">
-    <div class="hero-date"><svg class="ic"><use href="#ic-calendar"/></svg> 08 de Agosto de 2026 · 09h30 às 17h30</div>
+    <div class="hero-top-inner">
+      <img src="assets/logo-workshop.png" class="hero-logo" alt="Workshop Imob In Digital">
+      <div class="hero-date"><svg class="ic"><use href="#ic-calendar"/></svg> 08 de Agosto de 2026 · 09h30 às 17h30</div>
+    </div>
   </div>
   <div class="hero-row">
     <div class="hero-content reveal in">
@@ -293,8 +306,8 @@ footer p{color:var(--text3);font-size:11.5px;}
       <p class="sub">Vamos construir isso juntos — o mesmo sistema que a Arrive aplica em mais de 200 estruturas digitais desde 2012. No orgânico, 41% dos compradores encontram o corretor pelo conteúdo (NAR, 2025); no pago, a Meta usa esse mesmo perfil pra segmentar melhor a campanha. Construiremos os dois ao vivo, nesse&nbsp;workshop.</p>
       <div class="hero-cta-block">
         <div class="hero-cta-top">
-          <a href="#investimento" id="hero-cta" class="btn">Comprar Ingresso | Lote 1 <svg class="ic"><use href="#ic-arrow"/></svg></a>
-          <div class="price-inline"><span class="new">R$ 19,00</span></div>
+          <a href="#investimento" id="hero-cta" class="btn btn-glass">Comprar Ingresso | Lote 1 <svg class="ic"><use href="#ic-arrow"/></svg></a>
+          <div class="price-inline"><span class="old">De R$ 79,00</span><span class="new">R$ 19,00</span></div>
         </div>
         <div class="progress-bar-bg"><div class="progress-bar-fill" id="progress-fill"></div></div>
         <div class="progress-caption"><b id="progress-pct">0%</b> das vagas preenchidas</div>
@@ -307,10 +320,11 @@ footer p{color:var(--text3);font-size:11.5px;}
 <!-- ============================================================ STICKY CTA -->
 <div class="sticky-cta" id="sticky-cta">
   <div class="sticky-cta-inner">
-    <a href="#investimento" class="btn">Comprar Ingresso <svg class="ic"><use href="#ic-arrow"/></svg></a>
+    <a href="#investimento" class="btn btn-glass">Comprar Ingresso <svg class="ic"><use href="#ic-arrow"/></svg></a>
+    <div class="sticky-price"><span class="old">De R$ 79</span><span class="new">R$ 19,00</span></div>
     <div class="sticky-progress-wrap">
       <div class="progress-bar-bg"><div class="progress-bar-fill" id="progress-fill-sticky"></div></div>
-      <span class="sticky-pct"><b id="progress-pct-sticky">0%</b> das vagas preenchidas</span>
+      <span class="sticky-pct"><b id="progress-pct-sticky">0%</b> preenchidas</span>
     </div>
   </div>
 </div>
