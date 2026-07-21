@@ -54,39 +54,55 @@ p,li{text-wrap:pretty;}
 
 /* ============ HERO ============ */
 #hero{
-  position:relative;overflow:hidden;
+  position:relative;overflow:hidden;min-height:94vh;
   background:#000 url(assets/bg-hero-mobile.jpg) center/cover no-repeat;
-  padding:130px 40px 0;
 }
-#hero::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.15) 45%, rgba(0,0,0,0) 65%);z-index:0;}
-.hero-top{position:absolute;top:0;left:0;right:0;z-index:2;display:flex;justify-content:space-between;align-items:center;padding:26px 40px;}
-.hero-logo{height:26px;}
-.hero-date{display:inline-flex;gap:9px;align-items:center;font-size:12px;color:rgba(255,255,255,0.8);border:1px solid rgba(255,255,255,0.15);border-radius:100px;padding:7px 15px;background:rgba(0,0,0,0.3);backdrop-filter:blur(6px);}
-.hero-row{position:relative;max-width:1400px;margin:0 auto;padding-bottom:90px;min-height:520px;}
-.hero-content{position:relative;z-index:1;max-width:600px;}
-.hero-content .eyebrow{display:block;margin-bottom:16px;}
-.hero-content h1{font-size:32px;margin:0 0 18px;}
-.hero-content p.sub{font-size:14px;color:rgba(255,255,255,0.65);margin-bottom:20px;}
-.hero .badges{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:30px;}
-.badge{font-size:11.5px;font-weight:700;background:rgba(124,58,237,0.14);border:1px solid var(--border-accent);color:#c4b5fd;padding:7px 13px;border-radius:100px;}
-.hero-cta-row{display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
-.price-inline{display:flex;flex-direction:column;line-height:1.2;}
-.price-inline .old{color:rgba(255,255,255,0.4);text-decoration:line-through;font-size:13px;}
-.price-inline .new{font-size:22px;font-weight:900;}
-.progress-note{margin-top:20px;font-size:12.5px;color:rgba(255,255,255,0.55);display:flex;align-items:center;gap:10px;max-width:340px;}
-.progress-bar-bg{flex:1;height:6px;border-radius:100px;background:rgba(255,255,255,0.12);overflow:hidden;}
+#hero::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.2) 45%, rgba(0,0,0,0) 65%);z-index:0;}
+
+.hero-top{
+  position:absolute;top:0;left:0;right:0;z-index:3;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:18px 40px;
+  background:rgba(8,8,8,0.4);
+  backdrop-filter:blur(16px) saturate(140%);
+  -webkit-backdrop-filter:blur(16px) saturate(140%);
+  border-bottom:1px solid rgba(255,255,255,0.08);
+}
+.hero-logo{height:40px;}
+.hero-date{display:inline-flex;gap:9px;align-items:center;font-size:12px;color:rgba(255,255,255,0.8);border:1px solid rgba(255,255,255,0.15);border-radius:100px;padding:7px 15px;background:rgba(0,0,0,0.25);}
+
+.hero-row{position:relative;z-index:1;max-width:1560px;margin:0 auto;min-height:94vh;display:flex;align-items:center;padding:130px 40px 70px;box-sizing:border-box;}
+.hero-content{position:relative;z-index:1;max-width:580px;}
+.hero-content .eyebrow{display:block;margin-bottom:16px;color:rgba(255,255,255,0.45);}
+.hero-content h1{font-size:34px;margin:0 0 20px;}
+.hero-content p.sub{font-size:14.5px;color:rgba(255,255,255,0.65);margin-bottom:28px;}
+
+.hero-cta-block{max-width:520px;}
+.hero-cta-top{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-bottom:14px;}
+.price-inline{display:flex;flex-direction:column;line-height:1.15;}
+.price-inline .new{font-size:24px;font-weight:900;}
+.progress-bar-bg{height:8px;border-radius:100px;background:rgba(255,255,255,0.12);overflow:hidden;}
 .progress-bar-fill{height:100%;border-radius:100px;background:var(--grad);width:0%;transition:width 1.4s cubic-bezier(.16,1,.3,1);}
+.progress-caption{margin-top:10px;font-size:12.5px;color:rgba(255,255,255,0.5);}
+.progress-caption b{color:#fff;font-weight:800;}
+
 .hero-photo{
   position:absolute;right:0;bottom:0;z-index:1;
-  height:clamp(420px, 56vw, 640px);width:auto;max-width:56%;
+  height:clamp(420px, 60vh, 540px);width:auto;max-width:42%;
   object-fit:contain;object-position:bottom right;
   filter:drop-shadow(0 30px 60px rgba(124,58,237,0.35));
 }
+@media(min-width:1400px){
+  .hero-photo{height:clamp(520px, 74vh, 680px);max-width:50%;}
+}
+@media(min-width:1700px){
+  .hero-photo{height:clamp(580px, 80vh, 760px);max-width:55%;}
+}
 @media(max-width:1000px){
-  .hero-row{min-height:0;padding-bottom:0;}
+  #hero{min-height:0;}
+  .hero-row{min-height:0;display:block;padding:130px 24px 60px;}
   .hero-photo{display:none;}
   #hero{
-    padding:110px 24px 70px;
     background:
       radial-gradient(ellipse 900px 700px at 100% 0%, rgba(124,58,237,0.4), transparent 60%),
       #000 url(assets/bg-hero-mobile.jpg) center/cover no-repeat;
@@ -94,8 +110,32 @@ p,li{text-wrap:pretty;}
   #hero::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.82) 55%, rgba(0,0,0,0.94) 100%);}
   .hero-content{position:relative;z-index:1;max-width:100%;}
   .hero-content h1{font-size:27px;}
-  .hero-top{padding:20px;}
+  .hero-top{padding:14px 20px;}
+  .hero-logo{height:30px;}
 }
+
+/* ============ STICKY CTA (aparece ao rolar) ============ */
+.sticky-cta{
+  position:fixed;top:0;left:0;right:0;z-index:80;
+  transform:translateY(-100%);transition:transform .35s ease;
+  background:rgba(8,8,8,0.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(255,255,255,0.08);
+  padding:12px 24px;
+}
+.sticky-cta.show{transform:translateY(0);}
+.sticky-cta-inner{max-width:1120px;margin:0 auto;display:flex;align-items:center;gap:18px;}
+.sticky-cta .btn{padding:11px 20px;font-size:13px;flex-shrink:0;}
+.sticky-progress-wrap{flex:1;display:flex;align-items:center;gap:12px;max-width:280px;}
+.sticky-progress-wrap .progress-bar-bg{flex:1;height:6px;}
+.sticky-pct{font-size:11.5px;color:rgba(255,255,255,0.65);white-space:nowrap;}
+@media(max-width:640px){.sticky-progress-wrap{display:none;}}
+
+/* ============ TICKER DE BENEFÍCIOS ============ */
+.ticker-wrap{background:#0a0a0a;border-bottom:1px solid var(--border);padding:18px 0;overflow:hidden;}
+.ticker-track{display:flex;align-items:center;gap:36px;width:max-content;animation:ticker-scroll 34s linear infinite;}
+.ticker-item{font-size:13px;font-weight:700;color:rgba(255,255,255,0.68);white-space:nowrap;}
+.ticker-dot{width:5px;height:5px;border-radius:50%;background:var(--purple);flex-shrink:0;}
+@keyframes ticker-scroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
 
 /* ============ MECANISMO ============ */
 .mec-cols{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
@@ -248,27 +288,50 @@ footer p{color:var(--text3);font-size:11.5px;}
   </div>
   <div class="hero-row">
     <div class="hero-content reveal in">
-      <span class="eyebrow">1ª edição</span>
-      <h1>Construa em 1 dia seu posicionamento com conteúdos e anúncios de imóveis que fecham venda todo mês, com um canal próprio de <span class="grad-text">comprador&nbsp;qualificado</span>.</h1>
-      <p class="sub">Vamos construir isso juntos — o mesmo sistema que a Arrive já aplica em mais de 200 estruturas digitais desde 2012. No orgânico, 41% dos compradores que usaram redes sociais na busca encontraram o corretor através do conteúdo, não do anúncio pago nem do portal (NAR, 2025). No tráfego pago, a Meta usa quem se conecta com seu perfil pra segmentar melhor qualquer campanha. E nós construiremos os dois ao vivo, nesse workshop.</p>
-      <div class="badges">
-        <span class="badge">200+ estruturas digitais implementadas</span>
-        <span class="badge">Foco exclusivo no mercado imobiliário</span>
-        <span class="badge">Desde 2012 no digital</span>
-      </div>
-      <div class="hero-cta-row">
-        <a href="#investimento" class="btn">Comprar Ingresso | Lote 1 <svg class="ic"><use href="#ic-arrow"/></svg></a>
-        <div class="price-inline"><span class="new">R$ 19,00</span></div>
-      </div>
-      <div class="progress-note">
-        <span id="progress-pct">0%</span>
+      <span class="eyebrow">100% online e ao vivo</span>
+      <h1>Construa em 1 dia seu posicionamento com conteúdos e anúncios de imóveis que fecham venda todo&nbsp;mês.</h1>
+      <p class="sub">Vamos construir isso juntos — o mesmo sistema que a Arrive aplica em mais de 200 estruturas digitais desde 2012. No orgânico, 41% dos compradores encontram o corretor pelo conteúdo (NAR, 2025); no pago, a Meta usa esse mesmo perfil pra segmentar melhor a campanha. Construiremos os dois ao vivo, nesse&nbsp;workshop.</p>
+      <div class="hero-cta-block">
+        <div class="hero-cta-top">
+          <a href="#investimento" id="hero-cta" class="btn">Comprar Ingresso | Lote 1 <svg class="ic"><use href="#ic-arrow"/></svg></a>
+          <div class="price-inline"><span class="new">R$ 19,00</span></div>
+        </div>
         <div class="progress-bar-bg"><div class="progress-bar-fill" id="progress-fill"></div></div>
-        <span>das vagas&nbsp;preenchidas</span>
+        <div class="progress-caption"><b id="progress-pct">0%</b> das vagas preenchidas</div>
       </div>
     </div>
     <img src="assets/hero-experts.png" class="hero-photo reveal in" alt="Erik Tafuri e Miguel Maulim">
   </div>
 </section>
+
+<!-- ============================================================ STICKY CTA -->
+<div class="sticky-cta" id="sticky-cta">
+  <div class="sticky-cta-inner">
+    <a href="#investimento" class="btn">Comprar Ingresso <svg class="ic"><use href="#ic-arrow"/></svg></a>
+    <div class="sticky-progress-wrap">
+      <div class="progress-bar-bg"><div class="progress-bar-fill" id="progress-fill-sticky"></div></div>
+      <span class="sticky-pct"><b id="progress-pct-sticky">0%</b> das vagas preenchidas</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ TICKER DE BENEFÍCIOS -->
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <span class="ticker-item">200+ estruturas digitais implementadas</span><span class="ticker-dot"></span>
+    <span class="ticker-item">Desde 2012 no mercado imobiliário</span><span class="ticker-dot"></span>
+    <span class="ticker-item">Posicionamento definido em 1 dia</span><span class="ticker-dot"></span>
+    <span class="ticker-item">Conteúdo estratégico planejado ao vivo</span><span class="ticker-dot"></span>
+    <span class="ticker-item">Anúncio de imóvel produzido no evento</span><span class="ticker-dot"></span>
+    <span class="ticker-item">Sistema funciona no orgânico e no pago</span><span class="ticker-dot"></span>
+    <span class="ticker-item">200+ estruturas digitais implementadas</span><span class="ticker-dot"></span>
+    <span class="ticker-item">Desde 2012 no mercado imobiliário</span><span class="ticker-dot"></span>
+    <span class="ticker-item">Posicionamento definido em 1 dia</span><span class="ticker-dot"></span>
+    <span class="ticker-item">Conteúdo estratégico planejado ao vivo</span><span class="ticker-dot"></span>
+    <span class="ticker-item">Anúncio de imóvel produzido no evento</span><span class="ticker-dot"></span>
+    <span class="ticker-item">Sistema funciona no orgânico e no pago</span><span class="ticker-dot"></span>
+  </div>
+</div>
 
 <!-- ============================================================ MECANISMO -->
 <section class="section section-light">
@@ -581,6 +644,8 @@ counters.forEach(c=>counterIO.observe(c));
   requestAnimationFrame(()=>{
     document.getElementById('progress-fill').style.width = pct+'%';
     document.getElementById('progress-pct').textContent = pct+'%';
+    document.getElementById('progress-fill-sticky').style.width = pct+'%';
+    document.getElementById('progress-pct-sticky').textContent = pct+'%';
     document.getElementById('ticket-progress-text').textContent = pct+'% das vagas preenchidas';
   });
 })();
@@ -592,4 +657,16 @@ document.querySelectorAll('.faq-item').forEach(item=>{
     if(!isOpen) item.classList.add('open');
   });
 });
+
+// mostra a barra flutuante quando o CTA da hero sai da tela
+const heroCta = document.getElementById('hero-cta');
+const stickyCta = document.getElementById('sticky-cta');
+if(heroCta && stickyCta){
+  const stickyIO = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      stickyCta.classList.toggle('show', !e.isIntersecting && e.boundingClientRect.top < 0);
+    });
+  },{threshold:0});
+  stickyIO.observe(heroCta);
+}
 </script>
