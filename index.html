@@ -148,17 +148,86 @@ p,li{text-wrap:pretty;}
 .ticker-dot{width:5px;height:5px;border-radius:50%;background:var(--purple);flex-shrink:0;}
 @keyframes ticker-scroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
 
-/* ============ MECANISMO ============ */
-.mec-cols{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
-.mec-card{background:var(--card2);border:1px solid var(--border);border-radius:16px;padding:22px 20px;color:#fff;}
-.mec-card .ic-badge{width:36px;height:36px;border-radius:10px;background:var(--grad);display:flex;align-items:center;justify-content:center;margin-bottom:14px;}
-.mec-card .ic-badge svg{width:17px;height:17px;stroke:#fff;}
-.mec-card h4{font-size:15px;margin-bottom:10px;}
-.mec-card ul{list-style:none;display:flex;flex-direction:column;gap:8px;}
-.mec-card ul li{font-size:12.5px;color:var(--text2);line-height:1.5;padding-left:13px;position:relative;}
-.mec-card ul li::before{content:'';position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--purple);}
-@media(max-width:900px){.mec-cols{grid-template-columns:1fr 1fr;}}
-@media(max-width:560px){.mec-cols{grid-template-columns:1fr;}}
+/* ============ MECANISMO — 5 subseções ============ */
+.ic-badge{width:36px;height:36px;border-radius:10px;background:var(--grad);display:flex;align-items:center;justify-content:center;margin-bottom:14px;}
+.ic-badge svg{width:17px;height:17px;stroke:#fff;}
+
+.pillar-eyebrow{display:flex;align-items:center;gap:10px;margin-bottom:16px;}
+.pillar-num{width:26px;height:26px;border-radius:8px;background:var(--grad);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:#fff;flex-shrink:0;}
+.pillar-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;}
+.pillar-grid.reverse .pillar-text{order:2;}
+.pillar-grid.reverse .pillar-illust{order:1;}
+.pillar-text h3{font-size:28px;margin-bottom:18px;}
+.pillar-text ul{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.pillar-text ul li{font-size:14.5px;line-height:1.55;padding-left:20px;position:relative;}
+.pillar-text ul li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--purple);}
+@media(max-width:900px){.pillar-grid{grid-template-columns:1fr;gap:40px;}.pillar-grid.reverse .pillar-text,.pillar-grid.reverse .pillar-illust{order:0;}}
+
+/* jornada do comprador (prova) */
+.journey{display:flex;justify-content:space-between;align-items:flex-start;max-width:900px;margin:50px auto 0;position:relative;}
+.journey::before{content:'';position:absolute;top:19px;left:40px;right:40px;height:2px;background:var(--border-accent);}
+.journey-step{position:relative;z-index:1;text-align:center;flex:1;max-width:190px;}
+.journey-dot{width:40px;height:40px;border-radius:50%;background:#fff;border:2px solid var(--purple);display:flex;align-items:center;justify-content:center;margin:0 auto 14px;font-weight:800;color:var(--purple);font-size:14px;}
+.journey-step p{font-size:13px;font-weight:700;line-height:1.4;}
+@media(max-width:700px){
+  .journey{flex-direction:column;gap:22px;align-items:flex-start;max-width:340px;}
+  .journey::before{display:none;}
+  .journey-step{text-align:left;display:flex;gap:14px;align-items:center;max-width:none;}
+  .journey-dot{margin:0;flex-shrink:0;}
+}
+
+/* mockup de perfil com callouts numerados */
+.ig-mock{width:250px;margin:0 auto;background:#0d0d0d;border:1px solid var(--border);border-radius:26px;padding:20px;}
+.ig-zone{position:relative;margin-bottom:16px;}
+.ig-zone .zn{position:absolute;top:-10px;left:-10px;width:22px;height:22px;border-radius:50%;background:var(--grad);color:#fff;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;z-index:1;}
+.ig-avatar-row{display:flex;align-items:center;gap:10px;}
+.ig-avatar-circle{width:44px;height:44px;border-radius:50%;background:var(--grad);}
+.ig-name-bar{height:10px;width:80px;background:rgba(255,255,255,0.2);border-radius:4px;}
+.ig-bio-lines span{display:block;height:8px;background:rgba(255,255,255,0.15);border-radius:4px;margin-bottom:6px;}
+.ig-bio-lines span:nth-child(1){width:90%;}
+.ig-bio-lines span:nth-child(2){width:70%;}
+.ig-highlights{display:flex;gap:8px;}
+.ig-hl-circle{width:32px;height:32px;border-radius:50%;border:1px solid rgba(255,255,255,0.25);}
+.ig-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;}
+.ig-grid div{aspect-ratio:1;background:rgba(255,255,255,0.12);border-radius:2px;}
+.ig-legend{margin-top:22px;font-size:12.5px;color:var(--text2);text-align:center;}
+
+/* matriz de conteúdo */
+.matrix-wrap{max-width:340px;margin:0 auto;}
+.matrix-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.matrix-cell{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:22px 16px;text-align:center;}
+.matrix-cell .ic-badge{margin:0 auto 10px;}
+.matrix-cell span{font-size:13.5px;font-weight:700;color:#fff;}
+.matrix-caption{text-align:center;font-size:12.5px;color:var(--text2);margin-top:18px;}
+
+/* fluxo do anúncio */
+.flow-diagram{display:flex;align-items:center;justify-content:center;}
+.flow-node{background:var(--card);border:1px solid var(--border-accent);border-radius:14px;padding:22px 16px;text-align:center;width:160px;}
+.flow-node .ic-badge{margin:0 auto 10px;}
+.flow-node span{font-size:12.5px;font-weight:700;color:#fff;line-height:1.4;}
+.flow-arrow{width:34px;height:2px;background:var(--border-accent);position:relative;flex-shrink:0;}
+.flow-arrow::after{content:'';position:absolute;right:0;top:-4px;border:5px solid transparent;border-left-color:var(--purple);}
+@media(max-width:700px){
+  .flow-diagram{flex-direction:column;}
+  .flow-arrow{width:2px;height:28px;margin:4px 0;}
+  .flow-arrow::after{right:-4px;top:auto;bottom:0;border-left-color:transparent;border-top-color:var(--purple);}
+}
+
+/* arco antes/depois vertical */
+.arc-compare{max-width:420px;margin:0 auto;}
+.arc-card{padding:20px 24px;border-radius:14px;}
+.arc-card.antes{background:rgba(225,29,72,0.06);border:1px solid rgba(225,29,72,0.25);}
+.arc-card.depois{background:rgba(0,200,150,0.06);border:1px solid rgba(0,200,150,0.25);margin-top:14px;}
+.arc-tag{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;margin-bottom:12px;display:block;}
+.arc-card.antes .arc-tag{color:#e11d48;}
+.arc-card.depois .arc-tag{color:#10b981;}
+.arc-card ul{list-style:none;display:flex;flex-direction:column;gap:8px;}
+.arc-card ul li{font-size:13px;line-height:1.5;padding-left:16px;position:relative;color:rgba(0,0,0,.68);}
+.arc-card ul li::before{content:'';position:absolute;left:0;top:7px;width:5px;height:5px;border-radius:50%;}
+.arc-card.antes ul li::before{background:#e11d48;}
+.arc-card.depois ul li::before{background:#10b981;}
+.arc-arrow-down{text-align:center;color:var(--purple);}
+.arc-arrow-down svg{transform:rotate(90deg);margin:4px auto;}
 
 /* ============ SEM SISTEMA VS COM SISTEMA ============ */
 .compact-compare{max-width:840px;margin:0 auto;display:flex;flex-direction:column;gap:10px;}
@@ -289,6 +358,10 @@ footer p{color:var(--text3);font-size:11.5px;}
   <symbol id="ic-ad" viewBox="0 0 24 24"><path d="M3 11l18-7v16l-18-7z"/><path d="M3 11v6a2 2 0 0 0 2 2h2v-8"/></symbol>
   <symbol id="ic-arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></symbol>
   <symbol id="ic-plus" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></symbol>
+  <symbol id="ic-person" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-7 8-7s8 3 8 7"/></symbol>
+  <symbol id="ic-signal" viewBox="0 0 24 24"><path d="M2 12a10 10 0 0 1 20 0"/><path d="M6 12a6 6 0 0 1 12 0"/><circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="ic-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></symbol>
+  <symbol id="ic-chat" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5 8.5 8.5 0 0 1-4-1L3 20l1-5.5A8.38 8.38 0 0 1 3.5 11 8.5 8.5 0 0 1 12 3a8.38 8.38 0 0 1 9 8.5z"/></symbol>
 </svg>
 
 <!-- ============================================================ HERO -->
@@ -347,49 +420,151 @@ footer p{color:var(--text3);font-size:11.5px;}
   </div>
 </div>
 
-<!-- ============================================================ MECANISMO -->
+<!-- ============================================================ MECANISMO 1/5 — A PROVA -->
 <section class="section section-light">
   <div class="container">
     <div class="head-center reveal">
       <h2>O corretor que vende bem não depende mais só de&nbsp;anúncio. Por&nbsp;quê?</h2>
       <p>O comprador de imóvel mudou de canal — ele já pesquisa, compara e decide boa parte da compra antes de falar com qualquer corretor. Quem só tem anúncio, sem posicionamento e sem conteúdo por trás, paga caro por clique de gente que nem sabia o que estava procurando. Quem tem os 3 alinhados, aparece pro comprador certo antes de gastar um real em&nbsp;tráfego.</p>
     </div>
-    <div class="mec-cols">
-      <div class="mec-card reveal">
-        <div class="ic-badge"><svg><use href="#ic-target"/></svg></div>
-        <h4>Posicionamento</h4>
-        <ul>
+    <div class="journey reveal">
+      <div class="journey-step"><div class="journey-dot">1</div><p>Pesquisa online</p></div>
+      <div class="journey-step"><div class="journey-dot">2</div><p>Compara opções</p></div>
+      <div class="journey-step"><div class="journey-dot">3</div><p>Decide</p></div>
+      <div class="journey-step"><div class="journey-dot">4</div><p>Só depois fala com o corretor</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ MECANISMO 2/5 — POSICIONAMENTO -->
+<section class="section bg-mecanismo">
+  <div class="container">
+    <div class="pillar-grid">
+      <div class="pillar-text reveal">
+        <div class="pillar-eyebrow"><span class="pillar-num">01</span><span class="eyebrow">O sistema</span></div>
+        <h3>Posicionamento</h3>
+        <ul class="text2">
           <li>Define pra quem você vende e por que esse profissional é a escolha certa</li>
           <li>É o que faz o comprador certo se reconhecer no seu perfil em segundos</li>
           <li>Sem isso, todo o resto (conteúdo, anúncio) fica sem direção</li>
         </ul>
       </div>
-      <div class="mec-card reveal">
-        <div class="ic-badge"><svg><use href="#ic-content"/></svg></div>
-        <h4>Conteúdo</h4>
-        <ul>
+      <div class="pillar-illust reveal">
+        <div class="ig-mock">
+          <div class="ig-zone" style="text-align:center;">
+            <div class="zn">1</div>
+            <div class="ig-avatar-circle" style="margin:0 auto;"></div>
+          </div>
+          <div class="ig-zone" style="text-align:center;">
+            <div class="zn">2</div>
+            <div class="ig-name-bar" style="margin:0 auto;"></div>
+          </div>
+          <div class="ig-zone">
+            <div class="zn">3</div>
+            <div class="ig-bio-lines"><span></span><span></span></div>
+          </div>
+          <div class="ig-zone">
+            <div class="zn">4</div>
+            <div class="ig-highlights"><div class="ig-hl-circle"></div><div class="ig-hl-circle"></div><div class="ig-hl-circle"></div></div>
+          </div>
+          <div class="ig-zone">
+            <div class="zn">5</div>
+            <div class="ig-grid"><div></div><div></div><div></div><div></div><div></div><div></div></div>
+          </div>
+        </div>
+        <p class="ig-legend">1 Foto · 2 Nome · 3 Bio · 4 Destaques · 5 Grid — cada zona precisa reforçar a anterior</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ MECANISMO 3/5 — CONTEÚDO -->
+<section class="section section-light">
+  <div class="container">
+    <div class="pillar-grid reverse">
+      <div class="pillar-text reveal">
+        <div class="pillar-eyebrow"><span class="pillar-num">02</span><span class="eyebrow">O sistema</span></div>
+        <h3>Conteúdo</h3>
+        <ul class="text2">
           <li>Atrai o comprador certo no orgânico, sem gastar um real</li>
           <li>É a matéria-prima do anúncio — o mesmo conteúdo bem construído vira o criativo que roda pago</li>
           <li>Constrói confiança antes de qualquer contato acontecer</li>
         </ul>
       </div>
-      <div class="mec-card reveal">
-        <div class="ic-badge"><svg><use href="#ic-ad"/></svg></div>
-        <h4>Anúncio</h4>
-        <ul>
+      <div class="pillar-illust reveal">
+        <div class="matrix-wrap">
+          <div class="matrix-grid">
+            <div class="matrix-cell"><div class="ic-badge"><svg><use href="#ic-content"/></svg></div><span>Imóvel</span></div>
+            <div class="matrix-cell"><div class="ic-badge"><svg><use href="#ic-shield"/></svg></div><span>Autoridade</span></div>
+            <div class="matrix-cell"><div class="ic-badge"><svg><use href="#ic-target"/></svg></div><span>Valor</span></div>
+            <div class="matrix-cell"><div class="ic-badge"><svg><use href="#ic-check"/></svg></div><span>Prova</span></div>
+          </div>
+          <p class="matrix-caption">Matriz 4x4: o que você posta × pra que você posta</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ MECANISMO 4/5 — ANÚNCIO -->
+<section class="section bg-curriculo">
+  <div class="container">
+    <div class="pillar-grid">
+      <div class="pillar-text reveal">
+        <div class="pillar-eyebrow"><span class="pillar-num">03</span><span class="eyebrow">O sistema</span></div>
+        <h3>Anúncio</h3>
+        <ul class="text2">
           <li>Usa o sinal de quem se conecta com seu perfil pra segmentar melhor a campanha</li>
           <li>Funciona nos dois lados: orgânico e pago, ao mesmo tempo</li>
           <li>Sem posicionamento e conteúdo por trás, é dinheiro pago por clique de curioso</li>
         </ul>
       </div>
-      <div class="mec-card reveal">
-        <div class="ic-badge"><svg><use href="#ic-check"/></svg></div>
-        <h4>Conclusão</h4>
-        <ul>
+      <div class="pillar-illust reveal">
+        <div class="flow-diagram">
+          <div class="flow-node"><div class="ic-badge"><svg><use href="#ic-person"/></svg></div><span>Perfil engajado</span></div>
+          <div class="flow-arrow"></div>
+          <div class="flow-node"><div class="ic-badge"><svg><use href="#ic-signal"/></svg></div><span>Sinal pro algoritmo</span></div>
+          <div class="flow-arrow"></div>
+          <div class="flow-node"><div class="ic-badge"><svg><use href="#ic-ad"/></svg></div><span>Anúncio mais qualificado</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ MECANISMO 5/5 — CONCLUSÃO -->
+<section class="section section-light">
+  <div class="container">
+    <div class="pillar-grid reverse">
+      <div class="pillar-text reveal">
+        <div class="pillar-eyebrow"><span class="pillar-num"><svg class="ic" style="width:13px;height:13px;"><use href="#ic-check"/></svg></span><span class="eyebrow">O sistema</span></div>
+        <h3>Conclusão</h3>
+        <ul class="text2">
           <li>Comprador chegando com contexto, não frio</li>
           <li>Menos dependência de portal, indicação ou plantão</li>
           <li>Fechar venda todo mês — não só quando o mês ajuda</li>
         </ul>
+      </div>
+      <div class="pillar-illust reveal">
+        <div class="arc-compare">
+          <div class="arc-card antes">
+            <span class="arc-tag">Antes</span>
+            <ul>
+              <li>Vende de forma inconsistente — mês bom, mês ruim, sem saber por quê</li>
+              <li>Trata posicionamento, conteúdo e anúncio como coisas separadas</li>
+              <li>Lead chega frio, direto no WhatsApp, sem contexto</li>
+            </ul>
+          </div>
+          <div class="arc-arrow-down"><svg class="ic" style="width:18px;height:18px;"><use href="#ic-arrow"/></svg></div>
+          <div class="arc-card depois">
+            <span class="arc-tag">Depois</span>
+            <ul>
+              <li>Comprador chegando com contexto, não frio</li>
+              <li>Menos dependência de portal, indicação ou plantão</li>
+              <li>Fechar venda todo mês — não só quando o mês ajuda</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </div>
