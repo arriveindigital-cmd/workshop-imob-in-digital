@@ -200,72 +200,14 @@ p,li{text-wrap:pretty;}
 .proof-setup{max-width:640px;margin:34px auto 0;font-size:16px;line-height:1.6;text-align:center;}
 .proof-setup b{font-weight:800;}
 
-/* lista numerada (.01/.02/.03) — substitui bullet de ponto nas seções com scroll progressivo */
-.num-list{display:flex;flex-direction:column;}
-.num-item{display:flex;gap:16px;padding:16px 0;border-top:1px solid var(--border);}
-.num-item:first-child{border-top:none;padding-top:0;}
-.num-item .ni-num{font-size:13px;font-weight:800;letter-spacing:.03em;flex-shrink:0;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;padding-top:1px;}
-.num-item p{font-size:14px;line-height:1.55;}
-
-/* alvo/mira — posicionamento como precisão de foco, não como UI de perfil */
-.target-compare{max-width:260px;margin:0 auto;display:flex;flex-direction:column;align-items:center;}
-.target-box{position:relative;width:170px;height:170px;flex-shrink:0;}
-.target-ring{position:absolute;border-radius:50%;border:2px solid rgba(255,255,255,0.14);}
-.target-box.good .target-ring{border-color:rgba(124,58,237,0.4);}
-.target-r1{inset:0;}
-.target-r2{inset:22%;}
-.target-r3{inset:44%;}
-.target-center{position:absolute;inset:46%;border-radius:50%;background:rgba(255,255,255,0.14);}
-.target-box.good .target-center{background:rgba(124,58,237,0.5);}
-.hit-miss{position:absolute;width:16px;height:16px;color:#e11d48;}
-.hit-good{position:absolute;inset:47%;border-radius:50%;background:var(--grad);box-shadow:0 0 0 7px rgba(124,58,237,0.22);}
-.target-tag{font-size:13px;font-weight:800;margin:16px 0 0;text-align:center;}
-.target-tag.bad{color:var(--text2);}
-.target-tag.good{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
-.target-arrow-down{color:var(--purple);margin:20px 0;}
-.target-arrow-down svg{transform:rotate(90deg);}
-
-/* ============ PILARES EM SCROLL FIXO (posicionamento, conteúdo, anúncio) ============ */
-.pillars-sticky-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px;align-items:start;}
-.pillars-photo-col{position:sticky;top:110px;align-self:start;}
-.pillars-photo-wrap{border-radius:20px;overflow:hidden;height:min(calc(100vh - 180px), 620px);}
-.pillars-photo-wrap img{width:100%;height:100%;object-fit:cover;}
-.pillars-timeline-col{position:relative;padding-left:40px;}
-.pillars-line{position:absolute;left:5px;top:6px;bottom:6px;width:2px;background:var(--border);}
-.pillar-stage{position:relative;padding-bottom:120px;}
-.pillar-stage:last-child{padding-bottom:10px;}
-.stage-dot{position:absolute;left:-40px;top:2px;width:14px;height:14px;border-radius:50%;background:var(--card2);border:2px solid var(--border);transition:background .35s ease,border-color .35s ease,transform .35s ease;}
-.pillar-stage.active .stage-dot{background:var(--grad);border-color:transparent;transform:scale(1.2);}
-.stage-title{font-size:16px;color:var(--text3);margin-bottom:20px;font-weight:800;transition:color .35s ease,font-size .35s ease;}
-.pillar-stage.active .stage-title{color:#fff;font-size:30px;}
-.pillars-timeline-col .reveal{opacity:.15;transform:none;}
-.pillars-timeline-col .reveal.in{opacity:1;}
-@media(max-width:900px){
-  .pillars-sticky-grid{grid-template-columns:1fr;}
-  .pillars-photo-col{position:relative;top:0;}
-  .pillars-photo-wrap{height:280px;margin-bottom:30px;}
-}
-
-/* matriz de conteúdo */
-.matrix-wrap{max-width:340px;margin:0 auto;}
-.matrix-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
-.matrix-cell{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:22px 16px;text-align:center;}
-.matrix-cell .ic-badge{margin:0 auto 10px;}
-.matrix-cell span{font-size:13.5px;font-weight:700;color:#fff;}
-.matrix-caption{text-align:center;font-size:12.5px;color:var(--text2);margin-top:18px;}
-
-/* fluxo do anúncio */
-.flow-diagram{display:flex;align-items:center;justify-content:center;}
-.flow-node{background:var(--card);border:1px solid var(--border-accent);border-radius:14px;padding:22px 16px;text-align:center;width:160px;}
-.flow-node .ic-badge{margin:0 auto 10px;}
-.flow-node span{font-size:12.5px;font-weight:700;color:#fff;line-height:1.4;}
-.flow-arrow{width:34px;height:2px;background:var(--border-accent);position:relative;flex-shrink:0;}
-.flow-arrow::after{content:'';position:absolute;right:0;top:-4px;border:5px solid transparent;border-left-color:var(--purple);}
-@media(max-width:700px){
-  .flow-diagram{flex-direction:column;}
-  .flow-arrow{width:2px;height:28px;margin:4px 0;}
-  .flow-arrow::after{right:-4px;top:auto;bottom:0;border-left-color:transparent;border-top-color:var(--purple);}
-}
+/* ============ PILARES (posicionamento, conteúdo, anúncio) — só texto, card estilo mockup, bullets aparecendo no scroll ============ */
+.pillars-wrap{max-width:560px;margin:0 auto;}
+.pillar-card{background:#1a1a1a;border:1px solid var(--border);border-radius:16px;padding:38px 36px;margin-bottom:26px;}
+.pillar-card:last-child{margin-bottom:0;}
+.pillar-card h3{font-size:23px;margin-bottom:22px;color:#fff;}
+.pillar-card ul{list-style:none;display:flex;flex-direction:column;gap:15px;}
+.pillar-card ul li{font-size:14.5px;line-height:1.6;color:var(--text2);padding-left:18px;position:relative;}
+.pillar-card ul li::before{content:'';position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--purple);}
 
 /* arco antes/depois vertical */
 .arc-compare{max-width:420px;margin:0 auto;}
@@ -506,86 +448,33 @@ footer p{color:var(--text3);font-size:11.5px;}
   </div>
 </section>
 
-<!-- ============================================================ MECANISMO 2-4/5 — POSICIONAMENTO, CONTEÚDO, ANÚNCIO (scroll fixo) -->
+<!-- ============================================================ MECANISMO 2-4/5 — POSICIONAMENTO, CONTEÚDO, ANÚNCIO -->
 <section class="section bg-mecanismo">
   <div class="container">
-    <div class="pillars-sticky-grid">
-      <div class="pillars-photo-col">
-        <div class="pillars-photo-wrap">
-          <img src="assets/pillars-photo.jpg" alt="Erik Tafuri apresentando o sistema">
-        </div>
+    <div class="pillars-wrap">
+      <div class="pillar-card">
+        <h3>Posicionamento</h3>
+        <ul>
+          <li class="reveal">Define pra quem você vende e por que esse profissional é a escolha certa</li>
+          <li class="reveal">É o que faz o comprador certo se reconhecer no seu perfil em segundos</li>
+          <li class="reveal">Sem isso, todo o resto (conteúdo, anúncio) fica sem direção</li>
+        </ul>
       </div>
-      <div class="pillars-timeline-col">
-        <div class="pillars-line"></div>
-
-        <div class="pillar-stage" data-stage="0">
-          <div class="stage-dot"></div>
-          <div class="stage-title">Posicionamento</div>
-          <div class="num-list">
-            <div class="num-item reveal"><span class="ni-num">01</span><p class="text2">Define pra quem você vende e por que esse profissional é a escolha certa</p></div>
-            <div class="num-item reveal"><span class="ni-num">02</span><p class="text2">É o que faz o comprador certo se reconhecer no seu perfil em segundos</p></div>
-            <div class="num-item reveal"><span class="ni-num">03</span><p class="text2">Sem isso, todo o resto (conteúdo, anúncio) fica sem direção</p></div>
-          </div>
-          <div class="target-compare reveal" style="margin-top:36px;">
-            <div class="target-box bad">
-              <div class="target-ring target-r1"></div>
-              <div class="target-ring target-r2"></div>
-              <div class="target-ring target-r3"></div>
-              <div class="target-center"></div>
-              <svg class="hit-miss" style="top:4%;left:64%;"><use href="#ic-x"/></svg>
-              <svg class="hit-miss" style="top:72%;left:10%;"><use href="#ic-x"/></svg>
-              <svg class="hit-miss" style="top:58%;left:82%;"><use href="#ic-x"/></svg>
-              <svg class="hit-miss" style="top:14%;left:16%;"><use href="#ic-x"/></svg>
-            </div>
-            <p class="target-tag bad">Sem foco, sem direção</p>
-            <div class="target-arrow-down"><svg class="ic"><use href="#ic-arrow"/></svg></div>
-            <div class="target-box good">
-              <div class="target-ring target-r1"></div>
-              <div class="target-ring target-r2"></div>
-              <div class="target-ring target-r3"></div>
-              <div class="target-center"></div>
-              <div class="hit-good"></div>
-            </div>
-            <p class="target-tag good">Reconhecimento em segundos</p>
-          </div>
-        </div>
-
-        <div class="pillar-stage" data-stage="1">
-          <div class="stage-dot"></div>
-          <div class="stage-title">Conteúdo</div>
-          <div class="num-list">
-            <div class="num-item reveal"><span class="ni-num">01</span><p class="text2">Atrai o comprador certo no orgânico, sem gastar um real</p></div>
-            <div class="num-item reveal"><span class="ni-num">02</span><p class="text2">É a matéria-prima do anúncio — o mesmo conteúdo bem construído vira o criativo que roda pago</p></div>
-            <div class="num-item reveal"><span class="ni-num">03</span><p class="text2">Constrói confiança antes de qualquer contato acontecer</p></div>
-          </div>
-          <div class="matrix-wrap reveal" style="margin-top:36px;">
-            <div class="matrix-grid">
-              <div class="matrix-cell"><div class="ic-badge"><svg><use href="#ic-content"/></svg></div><span>Imóvel</span></div>
-              <div class="matrix-cell"><div class="ic-badge"><svg><use href="#ic-shield"/></svg></div><span>Autoridade</span></div>
-              <div class="matrix-cell"><div class="ic-badge"><svg><use href="#ic-target"/></svg></div><span>Valor</span></div>
-              <div class="matrix-cell"><div class="ic-badge"><svg><use href="#ic-check"/></svg></div><span>Prova</span></div>
-            </div>
-            <p class="matrix-caption">Matriz 4x4: o que você posta × pra que você posta</p>
-          </div>
-        </div>
-
-        <div class="pillar-stage" data-stage="2">
-          <div class="stage-dot"></div>
-          <div class="stage-title">Anúncio</div>
-          <div class="num-list">
-            <div class="num-item reveal"><span class="ni-num">01</span><p class="text2">Usa o sinal de quem se conecta com seu perfil pra segmentar melhor a campanha</p></div>
-            <div class="num-item reveal"><span class="ni-num">02</span><p class="text2">Funciona nos dois lados: orgânico e pago, ao mesmo tempo</p></div>
-            <div class="num-item reveal"><span class="ni-num">03</span><p class="text2">Sem posicionamento e conteúdo por trás, é dinheiro pago por clique de curioso</p></div>
-          </div>
-          <div class="flow-diagram reveal" style="margin-top:36px;">
-            <div class="flow-node"><div class="ic-badge"><svg><use href="#ic-person"/></svg></div><span>Perfil engajado</span></div>
-            <div class="flow-arrow"></div>
-            <div class="flow-node"><div class="ic-badge"><svg><use href="#ic-signal"/></svg></div><span>Sinal pro algoritmo</span></div>
-            <div class="flow-arrow"></div>
-            <div class="flow-node"><div class="ic-badge"><svg><use href="#ic-ad"/></svg></div><span>Anúncio mais qualificado</span></div>
-          </div>
-        </div>
-
+      <div class="pillar-card">
+        <h3>Conteúdo</h3>
+        <ul>
+          <li class="reveal">Atrai o comprador certo no orgânico, sem gastar um real</li>
+          <li class="reveal">É a matéria-prima do anúncio — o mesmo conteúdo bem construído vira o criativo que roda pago</li>
+          <li class="reveal">Constrói confiança antes de qualquer contato acontecer</li>
+        </ul>
+      </div>
+      <div class="pillar-card">
+        <h3>Anúncio</h3>
+        <ul>
+          <li class="reveal">Usa o sinal de quem se conecta com seu perfil pra segmentar melhor a campanha</li>
+          <li class="reveal">Funciona nos dois lados: orgânico e pago, ao mesmo tempo</li>
+          <li class="reveal">Sem posicionamento e conteúdo por trás, é dinheiro pago por clique de curioso</li>
+        </ul>
       </div>
     </div>
   </div>
@@ -917,18 +806,6 @@ if(heroCta && stickyCta){
   },{threshold:0});
   stickyIO.observe(heroCta);
 }
-
-// destaca o estágio ativo (posicionamento/conteúdo/anúncio) conforme o scroll passa pela faixa central da tela
-(function(){
-  const stages = document.querySelectorAll('.pillar-stage');
-  if(!stages.length) return;
-  const stageIO = new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{
-      e.target.classList.toggle('active', e.isIntersecting);
-    });
-  },{rootMargin:'-45% 0px -45% 0px', threshold:0});
-  stages.forEach(s=>stageIO.observe(s));
-})();
 
 // mockup de navegador da seção "a prova" — busca digitando, cursor comparando com hover, seleção final
 (function(){
