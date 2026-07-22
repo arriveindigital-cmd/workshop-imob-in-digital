@@ -163,23 +163,17 @@ p,li{text-wrap:pretty;}
 .pillar-text ul li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--purple);}
 @media(max-width:900px){.pillar-grid{grid-template-columns:1fr;gap:40px;}.pillar-grid.reverse .pillar-text,.pillar-grid.reverse .pillar-illust{order:0;}}
 
-/* jornada do comprador (prova) — a própria frase revelada fragmento a fragmento no scroll */
-.journey-intro{text-align:center;font-size:17px;font-weight:700;margin:44px 0 6px;}
-.journey-v{max-width:640px;margin:0 auto;position:relative;padding-left:32px;}
-.journey-v::before{content:'';position:absolute;left:7px;top:10px;bottom:10px;width:2px;background:var(--border-accent);}
-.journey-v-step{position:relative;padding:14px 0;}
-.jv-dot{position:absolute;left:-32px;top:22px;width:16px;height:16px;border-radius:50%;background:#fff;border:3px solid var(--purple);}
-.jv-text{font-size:24px;font-weight:800;letter-spacing:-.01em;}
-.proof-contrast{max-width:680px;margin:44px auto 0;display:flex;flex-direction:column;gap:16px;}
-.proof-item{display:flex;gap:14px;align-items:flex-start;}
-.proof-item .ic{margin-top:5px;width:20px;height:20px;}
-.proof-item.bad{opacity:.6;}
-.proof-item.bad .ic{color:#e11d48;}
-.proof-item.bad p{font-size:14.5px;line-height:1.5;}
-.proof-item.good .ic{color:var(--purple);width:26px;height:26px;}
-.proof-item.good p{font-size:21px;font-weight:800;line-height:1.4;}
+/* prova — frase única com palavra rotativa animada (uma coisa por vez) */
+.proof-block{max-width:680px;margin:50px auto 0;text-align:center;}
+.proof-lead{font-size:19px;font-weight:700;margin-bottom:10px;}
+.proof-rotator{font-size:30px;font-weight:800;letter-spacing:-.015em;line-height:1.3;}
+.rotator-word{display:inline-block;color:var(--purple);transition:opacity .3s ease, transform .3s ease;}
+.proof-rule{width:44px;height:3px;background:var(--grad);border-radius:2px;margin:46px auto 0;}
+.proof-setup{max-width:600px;margin:24px auto 0;font-size:15.5px;text-align:center;}
+.proof-punch{max-width:640px;margin:14px auto 0;font-size:27px;font-weight:800;line-height:1.35;text-align:center;letter-spacing:-.01em;}
 @media(max-width:700px){
-  .jv-text{font-size:19px;}
+  .proof-rotator{font-size:22px;}
+  .proof-punch{font-size:21px;}
 }
 
 /* mockup de perfil com callouts numerados */
@@ -432,17 +426,13 @@ footer p{color:var(--text3);font-size:11.5px;}
     <div class="head-center reveal">
       <h2>O corretor que vende bem não depende mais só de&nbsp;anúncio. Por&nbsp;quê?</h2>
     </div>
-    <p class="journey-intro reveal">O comprador de imóvel mudou de canal:</p>
-    <div class="journey-v">
-      <div class="journey-v-step reveal"><span class="jv-dot"></span><span class="jv-text">já pesquisa</span></div>
-      <div class="journey-v-step reveal"><span class="jv-dot"></span><span class="jv-text">compara</span></div>
-      <div class="journey-v-step reveal"><span class="jv-dot"></span><span class="jv-text">decide boa parte da compra</span></div>
-      <div class="journey-v-step reveal"><span class="jv-dot"></span><span class="jv-text">antes de falar com qualquer corretor</span></div>
+    <div class="proof-block reveal">
+      <p class="proof-lead">O comprador de imóvel mudou de canal.</p>
+      <p class="proof-rotator">Antes de falar com qualquer corretor ele já <span class="rotator-word" id="rotator-word">pesquisa</span></p>
     </div>
-    <div class="proof-contrast">
-      <div class="proof-item bad reveal"><svg class="ic"><use href="#ic-x"/></svg><p>Quem só tem anúncio, sem posicionamento e sem conteúdo por trás, paga caro por clique de gente que nem sabia o que estava&nbsp;procurando.</p></div>
-      <div class="proof-item good reveal"><svg class="ic"><use href="#ic-check"/></svg><p>Quem tem os 3 alinhados, aparece pro comprador certo antes de gastar um real em&nbsp;tráfego.</p></div>
-    </div>
+    <div class="proof-rule reveal"></div>
+    <p class="proof-setup text2 reveal">Quem só tem anúncio, sem posicionamento e sem conteúdo por trás, paga caro por clique de gente que nem sabia o que estava&nbsp;procurando.</p>
+    <p class="proof-punch grad-text reveal">Quem tem os 3 alinhados, aparece pro comprador certo antes de gastar um real em&nbsp;tráfego.</p>
   </div>
 </section>
 
@@ -868,4 +858,33 @@ if(heroCta && stickyCta){
   },{threshold:0});
   stickyIO.observe(heroCta);
 }
+
+// palavra rotativa da seção "a prova" — uma de cada vez, animada
+(function(){
+  const el = document.getElementById('rotator-word');
+  if(!el) return;
+  const words = ['pesquisa','compara','decide boa parte da compra'];
+  let i = 0;
+  let timer = null;
+  function swap(){
+    el.style.opacity = 0;
+    el.style.transform = 'translateY(8px)';
+    setTimeout(()=>{
+      i = (i+1) % words.length;
+      el.textContent = words[i];
+      el.style.transform = 'translateY(-8px)';
+      requestAnimationFrame(()=>{
+        el.style.opacity = 1;
+        el.style.transform = 'translateY(0)';
+      });
+    }, 300);
+  }
+  const rotatorIO = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){ if(!timer) timer = setInterval(swap, 2000); }
+      else { clearInterval(timer); timer = null; }
+    });
+  },{threshold:.4});
+  rotatorIO.observe(el);
+})();
 </script>
