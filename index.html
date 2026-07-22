@@ -210,6 +210,24 @@ p,li{text-wrap:pretty;}
 .pillar-block ul{list-style:none;display:flex;flex-direction:column;gap:24px;}
 .pillar-block ul li{font-size:14.5px;line-height:1.6;color:var(--text2);padding-left:18px;position:relative;}
 .pillar-block ul li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--grad);}
+.pillar-mock{margin:0 0 28px;background:#111;border:1px solid var(--border);border-radius:12px;padding:16px;}
+.pm-profile{display:flex;align-items:center;gap:12px;margin-bottom:14px;}
+.pm-avatar{width:38px;height:38px;border-radius:50%;background:var(--grad);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.pm-avatar .ic{width:18px;height:18px;color:#fff;}
+.pm-lines{flex:1;display:flex;flex-direction:column;gap:7px;}
+.pm-bar{height:7px;border-radius:4px;background:rgba(255,255,255,0.1);}
+.pm-bar.w90{width:90%;}
+.pm-bar.w60{width:60%;}
+.pm-bar.grad{background:var(--grad);width:75%;height:8px;}
+.pm-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;}
+.pm-grid-cell{aspect-ratio:1;border-radius:6px;background:rgba(255,255,255,0.05);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;}
+.pm-grid-cell .ic{width:15px;height:15px;color:var(--text2);}
+.pm-ad-media{height:64px;border-radius:8px;background:linear-gradient(135deg,rgba(249,115,22,0.15),rgba(124,58,237,0.15));border:1px solid var(--border);display:flex;align-items:center;justify-content:center;margin-bottom:12px;}
+.pm-ad-media .ic{width:22px;height:22px;color:var(--text2);}
+.pm-ad-label{font-size:10px;letter-spacing:.05em;text-transform:uppercase;color:var(--text2);display:flex;align-items:center;gap:6px;margin-bottom:10px;}
+.pm-ad-label .ic{width:12px;height:12px;}
+.pm-ad-bars{display:flex;flex-direction:column;gap:7px;margin-bottom:12px;}
+.pm-ad-btn{display:inline-block;font-size:11px;padding:6px 14px;border-radius:6px;background:var(--grad);color:#fff;font-weight:700;}
 
 /* arco antes/depois vertical */
 .arc-compare{max-width:420px;margin:0 auto;}
@@ -457,6 +475,16 @@ footer p{color:var(--text3);font-size:11.5px;}
       <div class="browser-bar"><span class="bdot"></span><span class="bdot"></span><span class="bdot"></span></div>
       <div class="pillar-block">
         <div class="pillar-block-head"><span class="pillar-block-num">01</span><h3>Posicionamento</h3></div>
+        <div class="pillar-mock reveal">
+          <div class="pm-profile">
+            <div class="pm-avatar"><svg class="ic"><use href="#ic-person"/></svg></div>
+            <div class="pm-lines">
+              <div class="pm-bar w60"></div>
+              <div class="pm-bar w90"></div>
+            </div>
+          </div>
+          <div class="pm-bar grad"></div>
+        </div>
         <ul>
           <li class="reveal">Define pra quem você vende e por que esse profissional é a escolha certa</li>
           <li class="reveal">É o que faz o comprador certo se reconhecer no seu perfil em segundos</li>
@@ -465,6 +493,16 @@ footer p{color:var(--text3);font-size:11.5px;}
       </div>
       <div class="pillar-block">
         <div class="pillar-block-head"><span class="pillar-block-num">02</span><h3>Conteúdo</h3></div>
+        <div class="pillar-mock reveal">
+          <div class="pm-grid">
+            <div class="pm-grid-cell"><svg class="ic"><use href="#ic-home"/></svg></div>
+            <div class="pm-grid-cell"><svg class="ic"><use href="#ic-shield"/></svg></div>
+            <div class="pm-grid-cell"><svg class="ic"><use href="#ic-signal"/></svg></div>
+            <div class="pm-grid-cell"><svg class="ic"><use href="#ic-check"/></svg></div>
+            <div class="pm-grid-cell"><svg class="ic"><use href="#ic-content"/></svg></div>
+            <div class="pm-grid-cell"><svg class="ic"><use href="#ic-home"/></svg></div>
+          </div>
+        </div>
         <ul>
           <li class="reveal">Atrai o comprador certo no orgânico, sem gastar um real</li>
           <li class="reveal">É a matéria-prima do anúncio — o mesmo conteúdo bem construído vira o criativo que roda pago</li>
@@ -473,6 +511,15 @@ footer p{color:var(--text3);font-size:11.5px;}
       </div>
       <div class="pillar-block">
         <div class="pillar-block-head"><span class="pillar-block-num">03</span><h3>Anúncio</h3></div>
+        <div class="pillar-mock reveal">
+          <div class="pm-ad-label"><svg class="ic"><use href="#ic-ad"/></svg>Patrocinado</div>
+          <div class="pm-ad-media"><svg class="ic"><use href="#ic-home"/></svg></div>
+          <div class="pm-ad-bars">
+            <div class="pm-bar w90"></div>
+            <div class="pm-bar w60"></div>
+          </div>
+          <span class="pm-ad-btn">Saiba mais</span>
+        </div>
         <ul>
           <li class="reveal">Usa o sinal de quem se conecta com seu perfil pra segmentar melhor a campanha</li>
           <li class="reveal">Funciona nos dois lados: orgânico e pago, ao mesmo tempo</li>
