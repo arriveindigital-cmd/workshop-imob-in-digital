@@ -163,17 +163,23 @@ p,li{text-wrap:pretty;}
 .pillar-text ul li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--purple);}
 @media(max-width:900px){.pillar-grid{grid-template-columns:1fr;gap:40px;}.pillar-grid.reverse .pillar-text,.pillar-grid.reverse .pillar-illust{order:0;}}
 
-/* jornada do comprador (prova) */
-.journey{display:flex;justify-content:space-between;align-items:flex-start;max-width:900px;margin:50px auto 0;position:relative;}
-.journey::before{content:'';position:absolute;top:19px;left:40px;right:40px;height:2px;background:var(--border-accent);}
-.journey-step{position:relative;z-index:1;text-align:center;flex:1;max-width:190px;}
-.journey-dot{width:40px;height:40px;border-radius:50%;background:#fff;border:2px solid var(--purple);display:flex;align-items:center;justify-content:center;margin:0 auto 14px;font-weight:800;color:var(--purple);font-size:14px;}
-.journey-step p{font-size:13px;font-weight:700;line-height:1.4;}
+/* jornada do comprador (prova) — a própria frase revelada fragmento a fragmento no scroll */
+.journey-intro{text-align:center;font-size:17px;font-weight:700;margin:44px 0 6px;}
+.journey-v{max-width:640px;margin:0 auto;position:relative;padding-left:32px;}
+.journey-v::before{content:'';position:absolute;left:7px;top:10px;bottom:10px;width:2px;background:var(--border-accent);}
+.journey-v-step{position:relative;padding:14px 0;}
+.jv-dot{position:absolute;left:-32px;top:22px;width:16px;height:16px;border-radius:50%;background:#fff;border:3px solid var(--purple);}
+.jv-text{font-size:24px;font-weight:800;letter-spacing:-.01em;}
+.proof-contrast{max-width:680px;margin:44px auto 0;display:flex;flex-direction:column;gap:16px;}
+.proof-item{display:flex;gap:14px;align-items:flex-start;}
+.proof-item .ic{margin-top:5px;width:20px;height:20px;}
+.proof-item.bad{opacity:.6;}
+.proof-item.bad .ic{color:#e11d48;}
+.proof-item.bad p{font-size:14.5px;line-height:1.5;}
+.proof-item.good .ic{color:var(--purple);width:26px;height:26px;}
+.proof-item.good p{font-size:21px;font-weight:800;line-height:1.4;}
 @media(max-width:700px){
-  .journey{flex-direction:column;gap:22px;align-items:flex-start;max-width:340px;}
-  .journey::before{display:none;}
-  .journey-step{text-align:left;display:flex;gap:14px;align-items:center;max-width:none;}
-  .journey-dot{margin:0;flex-shrink:0;}
+  .jv-text{font-size:19px;}
 }
 
 /* mockup de perfil com callouts numerados */
@@ -425,13 +431,17 @@ footer p{color:var(--text3);font-size:11.5px;}
   <div class="container">
     <div class="head-center reveal">
       <h2>O corretor que vende bem não depende mais só de&nbsp;anúncio. Por&nbsp;quê?</h2>
-      <p>O comprador de imóvel mudou de canal — ele já pesquisa, compara e decide boa parte da compra antes de falar com qualquer corretor. Quem só tem anúncio, sem posicionamento e sem conteúdo por trás, paga caro por clique de gente que nem sabia o que estava procurando. Quem tem os 3 alinhados, aparece pro comprador certo antes de gastar um real em&nbsp;tráfego.</p>
     </div>
-    <div class="journey reveal">
-      <div class="journey-step"><div class="journey-dot">1</div><p>Pesquisa online</p></div>
-      <div class="journey-step"><div class="journey-dot">2</div><p>Compara opções</p></div>
-      <div class="journey-step"><div class="journey-dot">3</div><p>Decide</p></div>
-      <div class="journey-step"><div class="journey-dot">4</div><p>Só depois fala com o corretor</p></div>
+    <p class="journey-intro reveal">O comprador de imóvel mudou de canal:</p>
+    <div class="journey-v">
+      <div class="journey-v-step reveal"><span class="jv-dot"></span><span class="jv-text">já pesquisa</span></div>
+      <div class="journey-v-step reveal"><span class="jv-dot"></span><span class="jv-text">compara</span></div>
+      <div class="journey-v-step reveal"><span class="jv-dot"></span><span class="jv-text">decide boa parte da compra</span></div>
+      <div class="journey-v-step reveal"><span class="jv-dot"></span><span class="jv-text">antes de falar com qualquer corretor</span></div>
+    </div>
+    <div class="proof-contrast">
+      <div class="proof-item bad reveal"><svg class="ic"><use href="#ic-x"/></svg><p>Quem só tem anúncio, sem posicionamento e sem conteúdo por trás, paga caro por clique de gente que nem sabia o que estava&nbsp;procurando.</p></div>
+      <div class="proof-item good reveal"><svg class="ic"><use href="#ic-check"/></svg><p>Quem tem os 3 alinhados, aparece pro comprador certo antes de gastar um real em&nbsp;tráfego.</p></div>
     </div>
   </div>
 </section>
