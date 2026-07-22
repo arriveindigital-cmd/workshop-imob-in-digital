@@ -192,10 +192,11 @@ p,li{text-wrap:pretty;}
 .rc-check.show{opacity:1;transform:scale(1);}
 .rc-check .ic{width:11px;height:11px;color:#fff;}
 
-.fake-cursor{position:absolute;top:0;left:0;width:20px;height:20px;opacity:0;transition:transform .55s cubic-bezier(.4,0,.2,1), opacity .3s ease;z-index:5;pointer-events:none;filter:drop-shadow(0 2px 5px rgba(0,0,0,.6));}
+.fake-cursor{position:absolute;top:0;left:0;width:20px;height:20px;opacity:0;transition:transform .55s cubic-bezier(.4,0,.2,1), opacity .3s ease;z-index:5;pointer-events:none;}
 .fake-cursor.show{opacity:1;}
-.fake-cursor.clicking{animation:cursor-click .35s ease;}
-@keyframes cursor-click{50%{transform:scale(.75) translate(var(--cx,0),var(--cy,0));}}
+.cursor-inner{width:100%;height:100%;filter:drop-shadow(0 2px 5px rgba(0,0,0,.6));}
+.fake-cursor.clicking .cursor-inner{animation:cursor-click .35s ease;}
+@keyframes cursor-click{50%{transform:scale(.7);}}
 .proof-setup{max-width:640px;margin:34px auto 0;font-size:16px;line-height:1.6;text-align:center;}
 .proof-setup b{font-weight:800;}
 
@@ -467,7 +468,7 @@ footer p{color:var(--text3);font-size:11.5px;}
             <div class="result-card" data-i="1"><img class="rc-photo-img" src="assets/imovel-2.jpg" alt=""><div class="rc-info"><div class="rc-title-text">Apartamento reformado</div><div class="rc-specs">62m² · 2 quartos · 1 banheiro</div></div><div class="rc-check"><svg class="ic"><use href="#ic-check"/></svg></div></div>
             <div class="result-card" data-i="2"><img class="rc-photo-img" src="assets/imovel-3.jpg" alt=""><div class="rc-info"><div class="rc-title-text">Casa em condomínio</div><div class="rc-specs">220m² · 4 quartos · 4 banheiros</div></div><div class="rc-check"><svg class="ic"><use href="#ic-check"/></svg></div></div>
           </div>
-          <div class="fake-cursor" id="fake-cursor"><svg class="ic" style="width:20px;height:20px;"><use href="#ic-cursor"/></svg></div>
+          <div class="fake-cursor" id="fake-cursor"><div class="cursor-inner"><svg class="ic" style="width:20px;height:20px;"><use href="#ic-cursor"/></svg></div></div>
         </div>
       </div>
     </div>
