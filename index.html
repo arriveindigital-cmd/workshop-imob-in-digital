@@ -171,7 +171,7 @@ p,li{text-wrap:pretty;}
 .burl{flex:1;margin-left:8px;background:rgba(255,255,255,0.06);border-radius:6px;padding:6px 12px;display:flex;align-items:center;gap:8px;}
 .burl .ic{width:12px;height:12px;color:var(--text2);}
 .burl span{font-size:11.5px;color:var(--text2);}
-.browser-body{height:224px;padding:18px 20px;display:flex;flex-direction:column;justify-content:center;gap:8px;}
+.browser-body{height:224px;padding:18px 20px;display:flex;flex-direction:column;justify-content:center;gap:8px;position:relative;}
 .bstate{display:none;flex-direction:column;gap:8px;}
 .bstate.active{display:flex;}
 .search-input{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,0.06);border:1px solid var(--border);border-radius:8px;padding:10px 14px;}
@@ -179,19 +179,29 @@ p,li{text-wrap:pretty;}
 .typing-text{font-size:13.5px;color:#fff;}
 .caret{width:2px;height:14px;background:var(--purple);animation:caret-blink 1s step-end infinite;}
 @keyframes caret-blink{50%{opacity:0;}}
-.result-card{border-radius:8px;background:rgba(255,255,255,0.05);border:1px solid var(--border);display:flex;align-items:center;gap:11px;padding:8px;transition:background .3s,border-color .3s;}
-.rc-photo{width:40px;height:40px;border-radius:6px;background:var(--grad);opacity:.45;flex-shrink:0;display:flex;align-items:center;justify-content:center;}
-.rc-photo .ic{width:16px;height:16px;color:#fff;}
-.rc-info{flex:1;min-width:0;display:flex;flex-direction:column;gap:5px;}
-.rc-title{height:8px;width:55%;background:rgba(255,255,255,0.22);border-radius:4px;}
-.rc-specs{font-size:10px;color:var(--text2);white-space:nowrap;}
-.rc-check{width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;background:rgba(255,255,255,0.06);}
-.rc-check .ic{width:12px;height:12px;color:var(--text3);}
-.result-card.selected{background:rgba(124,58,237,0.14);border-color:var(--border-accent);}
-.result-card.selected .rc-photo{opacity:1;}
-.result-card.selected .rc-title{background:rgba(255,255,255,0.4);}
-.result-card.selected .rc-check{background:var(--grad);}
-.result-card.selected .rc-check .ic{color:#fff;}
+
+.result-list{display:flex;flex-direction:column;gap:8px;}
+.result-list.hide{display:none;}
+.result-card{border-radius:8px;background:rgba(255,255,255,0.05);border:1px solid var(--border);display:flex;align-items:center;gap:11px;padding:7px;transition:background .3s ease,border-color .3s ease,transform .3s ease;}
+.result-card.hovered{background:rgba(124,58,237,0.12);border-color:var(--border-accent);transform:translateX(-4px);}
+.rc-photo-img{width:40px;height:40px;border-radius:6px;object-fit:cover;flex-shrink:0;}
+.rc-info{flex:1;min-width:0;display:flex;flex-direction:column;gap:4px;}
+.rc-title-text{font-size:11.5px;font-weight:700;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.rc-specs{font-size:9.5px;color:var(--text2);white-space:nowrap;}
+
+.fake-cursor{position:absolute;top:0;left:0;width:20px;height:20px;opacity:0;transition:transform .55s cubic-bezier(.4,0,.2,1), opacity .3s ease;z-index:5;pointer-events:none;filter:drop-shadow(0 2px 5px rgba(0,0,0,.6));}
+.fake-cursor.show{opacity:1;}
+.fake-cursor.clicking{animation:cursor-click .35s ease;}
+@keyframes cursor-click{50%{transform:scale(.75) translate(var(--cx,0),var(--cy,0));}}
+
+.property-preview{display:none;align-items:center;gap:14px;}
+.property-preview.show{display:flex;}
+.pp-photo{width:74px;height:74px;border-radius:10px;object-fit:cover;flex-shrink:0;}
+.pp-info{flex:1;min-width:0;}
+.pp-title{font-size:14px;font-weight:800;color:#fff;margin-bottom:5px;}
+.pp-specs{font-size:10.5px;color:var(--purple);font-weight:700;margin-bottom:7px;}
+.pp-desc{font-size:11.5px;color:var(--text2);line-height:1.45;}
+
 .browser-caption{text-align:center;margin-top:16px;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--purple);}
 .proof-setup{max-width:640px;margin:34px auto 0;font-size:16px;line-height:1.6;text-align:center;}
 .proof-setup b{font-weight:800;}
@@ -383,6 +393,7 @@ footer p{color:var(--text3);font-size:11.5px;}
   <symbol id="ic-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></symbol>
   <symbol id="ic-chat" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5 8.5 8.5 0 0 1-4-1L3 20l1-5.5A8.38 8.38 0 0 1 3.5 11 8.5 8.5 0 0 1 12 3a8.38 8.38 0 0 1 9 8.5z"/></symbol>
   <symbol id="ic-home" viewBox="0 0 24 24"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v9a1 1 0 0 0 1 1h5v-6h2v6h5a1 1 0 0 0 1-1v-9"/></symbol>
+  <symbol id="ic-cursor" viewBox="0 0 20 20"><path d="M3 2l14 5.8-6 1.9L8.9 16z" fill="#fff" stroke="#000" stroke-width="1" stroke-linejoin="round"/></symbol>
 </svg>
 
 <!-- ============================================================ HERO -->
@@ -457,15 +468,21 @@ footer p{color:var(--text3);font-size:11.5px;}
         <div class="bstate active" data-s="pesquisa">
           <div class="search-input"><svg class="ic"><use href="#ic-search"/></svg><span class="typing-text" id="typing-text"></span><span class="caret"></span></div>
         </div>
-        <div class="bstate" data-s="compara">
-          <div class="result-card"><div class="rc-photo"><svg class="ic"><use href="#ic-home"/></svg></div><div class="rc-info"><div class="rc-title"></div><div class="rc-specs">62m² · 2 quartos · 1 banheiro</div></div><div class="rc-check"><svg class="ic"><use href="#ic-check"/></svg></div></div>
-          <div class="result-card"><div class="rc-photo"><svg class="ic"><use href="#ic-home"/></svg></div><div class="rc-info"><div class="rc-title"></div><div class="rc-specs">78m² · 3 quartos · 2 banheiros</div></div><div class="rc-check"><svg class="ic"><use href="#ic-check"/></svg></div></div>
-          <div class="result-card"><div class="rc-photo"><svg class="ic"><use href="#ic-home"/></svg></div><div class="rc-info"><div class="rc-title"></div><div class="rc-specs">54m² · 1 quarto · 1 banheiro</div></div><div class="rc-check"><svg class="ic"><use href="#ic-check"/></svg></div></div>
-        </div>
-        <div class="bstate" data-s="decide">
-          <div class="result-card"><div class="rc-photo"><svg class="ic"><use href="#ic-home"/></svg></div><div class="rc-info"><div class="rc-title"></div><div class="rc-specs">62m² · 2 quartos · 1 banheiro</div></div><div class="rc-check"><svg class="ic"><use href="#ic-check"/></svg></div></div>
-          <div class="result-card selected"><div class="rc-photo"><svg class="ic"><use href="#ic-home"/></svg></div><div class="rc-info"><div class="rc-title"></div><div class="rc-specs">78m² · 3 quartos · 2 banheiros</div></div><div class="rc-check"><svg class="ic"><use href="#ic-check"/></svg></div></div>
-          <div class="result-card"><div class="rc-photo"><svg class="ic"><use href="#ic-home"/></svg></div><div class="rc-info"><div class="rc-title"></div><div class="rc-specs">54m² · 1 quarto · 1 banheiro</div></div><div class="rc-check"><svg class="ic"><use href="#ic-check"/></svg></div></div>
+        <div class="bstate" data-s="resultados">
+          <div class="result-list" id="result-list">
+            <div class="result-card" data-i="0"><img class="rc-photo-img" src="assets/imovel-1.jpg" alt=""><div class="rc-info"><div class="rc-title-text">Casa com piscina</div><div class="rc-specs">180m² · 4 quartos · 3 banheiros</div></div></div>
+            <div class="result-card" data-i="1"><img class="rc-photo-img" src="assets/imovel-2.jpg" alt=""><div class="rc-info"><div class="rc-title-text">Apartamento reformado</div><div class="rc-specs">62m² · 2 quartos · 1 banheiro</div></div></div>
+            <div class="result-card" data-i="2"><img class="rc-photo-img" src="assets/imovel-3.jpg" alt=""><div class="rc-info"><div class="rc-title-text">Casa em condomínio</div><div class="rc-specs">220m² · 4 quartos · 4 banheiros</div></div></div>
+          </div>
+          <div class="property-preview" id="property-preview">
+            <img class="pp-photo" id="pp-photo" src="assets/imovel-2.jpg" alt="">
+            <div class="pp-info">
+              <div class="pp-title" id="pp-title">Apartamento reformado</div>
+              <div class="pp-specs" id="pp-specs">62m² · 2 quartos · 1 banheiro</div>
+              <div class="pp-desc" id="pp-desc">Perto do centro, pronto pra morar.</div>
+            </div>
+          </div>
+          <div class="fake-cursor" id="fake-cursor"><svg class="ic" style="width:20px;height:20px;"><use href="#ic-cursor"/></svg></div>
         </div>
       </div>
     </div>
@@ -897,50 +914,102 @@ if(heroCta && stickyCta){
   stickyIO.observe(heroCta);
 }
 
-// mockup de navegador da seção "a prova" — simula a busca acontecendo na tela, um estado por vez
+// mockup de navegador da seção "a prova" — busca digitando, cursor comparando com hover, clique e preview do imóvel
 (function(){
   const mock = document.querySelector('.browser-mock');
   if(!mock) return;
+  const body = mock.querySelector('.browser-body');
   const states = mock.querySelectorAll('.bstate');
   const typingEl = document.getElementById('typing-text');
   const caption = document.getElementById('browser-caption');
-  const labels = {pesquisa:'pesquisa', compara:'compara', decide:'decide boa parte da compra'};
-  let idx = 0, cycleTimer = null, typeTimer = null;
+  const cursor = document.getElementById('fake-cursor');
+  const list = document.getElementById('result-list');
+  const preview = document.getElementById('property-preview');
+  const cards = Array.from(list.querySelectorAll('.result-card'));
+  const ppPhoto = document.getElementById('pp-photo');
+  const ppTitle = document.getElementById('pp-title');
+  const ppSpecs = document.getElementById('pp-specs');
+  const ppDesc = document.getElementById('pp-desc');
 
-  function typeText(text){
+  const properties = [
+    {photo:'assets/imovel-1.jpg', title:'Casa com piscina', specs:'180m² · 4 quartos · 3 banheiros', desc:'Área externa completa, ideal pra família.'},
+    {photo:'assets/imovel-2.jpg', title:'Apartamento reformado', specs:'62m² · 2 quartos · 1 banheiro', desc:'Perto do centro, pronto pra morar.'},
+    {photo:'assets/imovel-3.jpg', title:'Casa em condomínio', specs:'220m² · 4 quartos · 4 banheiros', desc:'Varanda ampla e área verde.'}
+  ];
+  const chosenIndex = 1;
+
+  let timers = [];
+  function clearAllTimers(){ timers.forEach(t=>clearTimeout(t)); timers = []; }
+  function at(ms, fn){ timers.push(setTimeout(fn, ms)); }
+
+  function showState(key){
+    states.forEach(s => s.classList.toggle('active', s.dataset.s === key));
+  }
+
+  function typeText(text, cb){
     let i = 0;
     typingEl.textContent = '';
-    clearInterval(typeTimer);
-    typeTimer = setInterval(()=>{
+    (function tick(){
       typingEl.textContent = text.slice(0, i+1);
       i++;
-      if(i >= text.length) clearInterval(typeTimer);
-    }, 70);
+      if(i < text.length){ at(65, tick); } else if(cb){ at(500, cb); }
+    })();
   }
 
-  function showState(i){
-    states.forEach((s,j)=>s.classList.toggle('active', j===i));
-    const key = states[i].dataset.s;
-    caption.textContent = labels[key];
-    if(key === 'pesquisa') typeText('apartamento 2 quartos');
+  function moveCursorTo(el){
+    const cRect = body.getBoundingClientRect();
+    const eRect = el.getBoundingClientRect();
+    const x = eRect.right - cRect.left - 26;
+    const y = eRect.top - cRect.top + eRect.height/2 - 9;
+    cursor.style.transform = `translate(${x}px, ${y}px)`;
   }
 
-  function next(){
-    idx = (idx+1) % states.length;
-    showState(idx);
+  function resetVisual(){
+    cursor.classList.remove('show','clicking');
+    list.classList.remove('hide');
+    preview.classList.remove('show');
+    cards.forEach(c => c.classList.remove('hovered'));
+  }
+
+  function playSequence(){
+    clearAllTimers();
+    resetVisual();
+    showState('pesquisa');
+    caption.textContent = 'pesquisa';
+    typeText('apartamento 2 quartos', ()=>{
+      showState('resultados');
+      caption.textContent = 'compara';
+      cursor.classList.add('show');
+      cards.forEach((c,i)=>{
+        at(i*750, ()=>{
+          cards.forEach(cc=>cc.classList.remove('hovered'));
+          moveCursorTo(c);
+          c.classList.add('hovered');
+        });
+      });
+      at(cards.length*750 + 250, ()=>{
+        caption.textContent = 'decide boa parte da compra';
+        const chosen = cards[chosenIndex];
+        cards.forEach(cc=>cc.classList.remove('hovered'));
+        moveCursorTo(chosen);
+        chosen.classList.add('hovered');
+        cursor.classList.add('clicking');
+        at(350, ()=>{
+          cursor.classList.remove('show','clicking');
+          list.classList.add('hide');
+          const p = properties[chosenIndex];
+          ppPhoto.src = p.photo; ppTitle.textContent = p.title; ppSpecs.textContent = p.specs; ppDesc.textContent = p.desc;
+          preview.classList.add('show');
+        });
+        at(350 + 2800, playSequence);
+      });
+    });
   }
 
   const mockIO = new IntersectionObserver((entries)=>{
     entries.forEach(e=>{
-      if(e.isIntersecting){
-        if(!cycleTimer){
-          idx = 0;
-          showState(0);
-          cycleTimer = setInterval(next, 2600);
-        }
-      } else {
-        clearInterval(cycleTimer); cycleTimer = null; clearInterval(typeTimer);
-      }
+      if(e.isIntersecting){ playSequence(); }
+      else { clearAllTimers(); }
     });
   },{threshold:.4});
   mockIO.observe(mock);
