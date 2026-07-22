@@ -200,12 +200,19 @@ p,li{text-wrap:pretty;}
 .proof-setup{max-width:640px;margin:34px auto 0;font-size:16px;line-height:1.6;text-align:center;}
 .proof-setup b{font-weight:800;}
 
+/* lista numerada (.01/.02/.03) — substitui bullet de ponto nas seções com scroll progressivo */
+.num-list{display:flex;flex-direction:column;}
+.num-item{display:flex;gap:16px;padding:16px 0;border-top:1px solid var(--border);}
+.num-item:first-child{border-top:none;padding-top:0;}
+.num-item .ni-num{font-size:13px;font-weight:800;letter-spacing:.03em;flex-shrink:0;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;padding-top:1px;}
+.num-item p{font-size:14px;line-height:1.55;}
+
 /* mockup de perfil com callouts numerados */
 .ig-mock{width:250px;margin:0 auto;background:#0d0d0d;border:1px solid var(--border);border-radius:26px;padding:20px;}
 .ig-zone{position:relative;margin-bottom:16px;}
 .ig-zone .zn{position:absolute;top:-10px;left:-10px;width:22px;height:22px;border-radius:50%;background:var(--grad);color:#fff;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;z-index:1;}
 .ig-avatar-row{display:flex;align-items:center;gap:10px;}
-.ig-avatar-circle{width:44px;height:44px;border-radius:50%;background:var(--grad);}
+.ig-avatar-img{width:44px;height:44px;border-radius:50%;object-fit:cover;}
 .ig-name-bar{height:10px;width:80px;background:rgba(255,255,255,0.2);border-radius:4px;}
 .ig-bio-lines span{display:block;height:8px;background:rgba(255,255,255,0.15);border-radius:4px;margin-bottom:6px;}
 .ig-bio-lines span:nth-child(1){width:90%;}
@@ -213,7 +220,7 @@ p,li{text-wrap:pretty;}
 .ig-highlights{display:flex;gap:8px;}
 .ig-hl-circle{width:32px;height:32px;border-radius:50%;border:1px solid rgba(255,255,255,0.25);}
 .ig-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;}
-.ig-grid div{aspect-ratio:1;background:rgba(255,255,255,0.12);border-radius:2px;}
+.ig-grid img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:2px;display:block;}
 .ig-legend{margin-top:22px;font-size:12.5px;color:var(--text2);text-align:center;}
 
 /* matriz de conteúdo */
@@ -480,39 +487,42 @@ footer p{color:var(--text3);font-size:11.5px;}
 <section class="section bg-mecanismo">
   <div class="container">
     <div class="pillar-grid">
-      <div class="pillar-text reveal">
-        <div class="pillar-eyebrow"><span class="pillar-num">01</span><span class="eyebrow">O sistema</span></div>
-        <h3>Posicionamento</h3>
-        <ul class="text2">
-          <li>Define pra quem você vende e por que esse profissional é a escolha certa</li>
-          <li>É o que faz o comprador certo se reconhecer no seu perfil em segundos</li>
-          <li>Sem isso, todo o resto (conteúdo, anúncio) fica sem direção</li>
-        </ul>
+      <div class="pillar-text">
+        <div class="pillar-eyebrow reveal"><span class="pillar-num">01</span><span class="eyebrow">O sistema</span></div>
+        <h3 class="reveal">Posicionamento</h3>
+        <div class="num-list">
+          <div class="num-item reveal"><span class="ni-num">01</span><p class="text2">Define pra quem você vende e por que esse profissional é a escolha certa</p></div>
+          <div class="num-item reveal"><span class="ni-num">02</span><p class="text2">É o que faz o comprador certo se reconhecer no seu perfil em segundos</p></div>
+          <div class="num-item reveal"><span class="ni-num">03</span><p class="text2">Sem isso, todo o resto (conteúdo, anúncio) fica sem direção</p></div>
+        </div>
       </div>
-      <div class="pillar-illust reveal">
+      <div class="pillar-illust">
         <div class="ig-mock">
-          <div class="ig-zone" style="text-align:center;">
+          <div class="ig-zone reveal" style="text-align:center;">
             <div class="zn">1</div>
-            <div class="ig-avatar-circle" style="margin:0 auto;"></div>
+            <img class="ig-avatar-img" src="assets/perfil-corretor.jpg" alt="" style="margin:0 auto;">
           </div>
-          <div class="ig-zone" style="text-align:center;">
+          <div class="ig-zone reveal" style="text-align:center;">
             <div class="zn">2</div>
             <div class="ig-name-bar" style="margin:0 auto;"></div>
           </div>
-          <div class="ig-zone">
+          <div class="ig-zone reveal">
             <div class="zn">3</div>
             <div class="ig-bio-lines"><span></span><span></span></div>
           </div>
-          <div class="ig-zone">
+          <div class="ig-zone reveal">
             <div class="zn">4</div>
             <div class="ig-highlights"><div class="ig-hl-circle"></div><div class="ig-hl-circle"></div><div class="ig-hl-circle"></div></div>
           </div>
-          <div class="ig-zone">
+          <div class="ig-zone reveal">
             <div class="zn">5</div>
-            <div class="ig-grid"><div></div><div></div><div></div><div></div><div></div><div></div></div>
+            <div class="ig-grid">
+              <img src="assets/imovel-1.jpg" alt=""><img src="assets/imovel-2.jpg" alt=""><img src="assets/imovel-3.jpg" alt="">
+              <img src="assets/grid-1.jpg" alt=""><img src="assets/grid-2.jpg" alt=""><img src="assets/grid-3.jpg" alt="">
+            </div>
           </div>
         </div>
-        <p class="ig-legend">1 Foto · 2 Nome · 3 Bio · 4 Destaques · 5 Grid — cada zona precisa reforçar a anterior</p>
+        <p class="ig-legend reveal">1 Foto · 2 Nome · 3 Bio · 4 Destaques · 5 Grid — cada zona precisa reforçar a anterior</p>
       </div>
     </div>
   </div>
