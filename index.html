@@ -274,10 +274,14 @@ p,li{text-wrap:pretty;}
 /* anúncio mockup */
 .ad-mock-label{display:flex;align-items:center;gap:6px;font-size:10px;letter-spacing:.05em;text-transform:uppercase;color:var(--text2);padding:14px 16px 0;}
 .ad-mock-label .ic{width:12px;height:12px;}
-.ad-mock-media{margin:10px 16px 0;height:70px;border-radius:8px;background:linear-gradient(135deg,rgba(249,115,22,0.15),rgba(124,58,237,0.15));border:1px solid var(--border);display:flex;align-items:center;justify-content:center;}
+.ad-mock-media{margin:10px 16px 0;height:80px;border-radius:8px;background:linear-gradient(135deg,rgba(249,115,22,0.15),rgba(124,58,237,0.15));border:1px solid var(--border);display:flex;align-items:center;justify-content:center;}
+.ad-mock-media.photo{background:url(assets/post-house.jpg) center/cover;border-color:transparent;}
 .ad-mock-media .ic{width:22px;height:22px;color:var(--text2);}
 .ad-mock-body{padding:12px 16px 16px;}
+.ad-mock-tag{display:inline-flex;align-items:center;gap:5px;font-size:10px;font-weight:700;padding:4px 10px;border-radius:20px;background:var(--grad);color:#fff;margin-bottom:8px;}
+.ad-mock-tag .ic{width:10px;height:10px;}
 .ad-mock-btn{display:inline-block;margin-top:10px;font-size:11px;padding:6px 14px;border-radius:6px;background:var(--grad);color:#fff;font-weight:700;}
+.ad-mock-btn-flat{display:inline-block;margin-top:10px;font-size:11px;padding:6px 14px;border-radius:6px;background:rgba(255,255,255,0.06);color:var(--text2);font-weight:700;border:1px solid var(--border);}
 
 /* chat mockup */
 .chat-mock-bar{display:flex;align-items:center;gap:8px;padding:12px 14px;border-bottom:1px solid var(--border);}
@@ -684,8 +688,8 @@ footer p{color:var(--text3);font-size:11.5px;}
           <div class="ad-mock-label"><svg class="ic"><use href="#ic-ad"/></svg>Patrocinado</div>
           <div class="ad-mock-media"><svg class="ic"><use href="#ic-home"/></svg></div>
           <div class="ad-mock-body">
-            <div class="pmc-line1">Apartamentos disponíveis na região</div>
-            <span class="ad-mock-btn">Saiba mais</span>
+            <div class="pmc-line1">Confira nossos imóveis</div>
+            <span class="ad-mock-btn-flat">Saiba mais</span>
           </div>
         </div>
         <p class="compare-caption">Anúncio rodando sem nenhum posicionamento por trás — pagando caro por clique de quem só estava&nbsp;curioso</p>
@@ -694,9 +698,10 @@ footer p{color:var(--text3);font-size:11.5px;}
         <span class="compare-tag good">Com sistema</span>
         <div class="mini-mock">
           <div class="ad-mock-label"><svg class="ic"><use href="#ic-ad"/></svg>Patrocinado</div>
-          <div class="ad-mock-media"><svg class="ic"><use href="#ic-home"/></svg></div>
+          <div class="ad-mock-media photo"></div>
           <div class="ad-mock-body">
-            <div class="pmc-line1 grad-text" style="font-weight:700;">Apartamentos de alto padrão pra quem busca a Zona&nbsp;Sul</div>
+            <span class="ad-mock-tag"><svg class="ic"><use href="#ic-target"/></svg>Alto padrão · Zona Sul</span>
+            <div class="pmc-line1" style="font-weight:700;">Apartamentos selecionados pra quem busca a Zona&nbsp;Sul</div>
             <span class="ad-mock-btn">Saiba mais</span>
           </div>
         </div>
@@ -860,38 +865,6 @@ footer p{color:var(--text3);font-size:11.5px;}
           </div>
         </div>
         <p class="compare-caption">Matriz de conteúdo com objetivo em cada post — todo post sabe o que quer do&nbsp;comprador</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section compare-block section-light" style="background:#f7f7f7;">
-  <div class="container">
-    <div class="compare-head reveal"><span class="compare-num">08</span><h3>O criativo</h3></div>
-    <div class="compare-grid">
-      <div class="compare-side reveal">
-        <span class="compare-tag bad">Sem sistema</span>
-        <div class="mini-mock">
-          <div class="ad-mock-label"><svg class="ic"><use href="#ic-ad"/></svg>Patrocinado</div>
-          <div class="ad-mock-media"><svg class="ic"><use href="#ic-home"/></svg></div>
-          <div class="ad-mock-body">
-            <div class="pmc-line1">Confira nossos imóveis</div>
-            <span class="ad-mock-btn">Saiba mais</span>
-          </div>
-        </div>
-        <p class="compare-caption">Copiar o criativo do corretor concorrente sem adaptar pro seu próprio&nbsp;diferencial</p>
-      </div>
-      <div class="compare-side reveal">
-        <span class="compare-tag good">Com sistema</span>
-        <div class="mini-mock">
-          <div class="ad-mock-label"><svg class="ic"><use href="#ic-ad"/></svg>Patrocinado</div>
-          <div class="ad-mock-media"><svg class="ic"><use href="#ic-home"/></svg></div>
-          <div class="ad-mock-body">
-            <div class="pmc-line1 grad-text" style="font-weight:700;">Apartamentos selecionados pra quem busca a Zona&nbsp;Sul</div>
-            <span class="ad-mock-btn">Saiba mais</span>
-          </div>
-        </div>
-        <p class="compare-caption">Criativo construído a partir do seu próprio posicionamento — não genérico, não&nbsp;copiado</p>
       </div>
     </div>
   </div>
