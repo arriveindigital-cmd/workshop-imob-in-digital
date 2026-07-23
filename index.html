@@ -290,6 +290,14 @@ p,li{text-wrap:pretty;}
 .chat-mock-body{padding:18px 16px;}
 .chat-bubble{background:#232323;border-radius:12px 12px 12px 2px;padding:10px 14px;font-size:12.5px;line-height:1.4;color:#fff;max-width:88%;}
 
+/* grade de conteúdo (frequência) — grid 3 colunas estilo feed do Instagram */
+.freq-tabs{padding:10px 16px;border-bottom:1px solid var(--border);}
+.freq-tab{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#fff;padding-bottom:8px;border-bottom:2px solid #fff;}
+.freq-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;padding:3px;}
+.freq-cell{aspect-ratio:1;background:linear-gradient(135deg,#242424,#161616);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;}
+.freq-cell .ic{width:18px;height:18px;color:rgba(255,255,255,0.4);}
+.freq-cat{font-size:8px;font-weight:700;text-transform:uppercase;letter-spacing:.03em;color:rgba(255,255,255,0.35);}
+
 /* grid mockup (frequência) — reaproveita .pm-grid/.pm-grid-cell dos pilares */
 
 /* ============ DEPOIMENTOS — phone frame ============ */
@@ -841,13 +849,14 @@ footer p{color:var(--text3);font-size:11.5px;}
       <div class="compare-side reveal">
         <span class="compare-tag bad">Sem sistema</span>
         <div class="mini-mock">
-          <div class="pm-grid" style="padding:16px;">
-            <div class="pm-grid-cell"><svg class="ic"><use href="#ic-home"/></svg></div>
-            <div class="pm-grid-cell"><svg class="ic"><use href="#ic-home"/></svg></div>
-            <div class="pm-grid-cell"><svg class="ic"><use href="#ic-home"/></svg></div>
-            <div class="pm-grid-cell"><svg class="ic"><use href="#ic-home"/></svg></div>
-            <div class="pm-grid-cell"><svg class="ic"><use href="#ic-home"/></svg></div>
-            <div class="pm-grid-cell"><svg class="ic"><use href="#ic-home"/></svg></div>
+          <div class="freq-tabs"><span class="freq-tab">Publicações</span></div>
+          <div class="freq-grid">
+            <div class="freq-cell"><svg class="ic"><use href="#ic-home"/></svg></div>
+            <div class="freq-cell"><svg class="ic"><use href="#ic-home"/></svg></div>
+            <div class="freq-cell"><svg class="ic"><use href="#ic-home"/></svg></div>
+            <div class="freq-cell"><svg class="ic"><use href="#ic-home"/></svg></div>
+            <div class="freq-cell"><svg class="ic"><use href="#ic-home"/></svg></div>
+            <div class="freq-cell"><svg class="ic"><use href="#ic-home"/></svg></div>
           </div>
         </div>
         <p class="compare-caption">Postar todo dia sem direção nenhuma de conteúdo, só pra "manter&nbsp;presença"</p>
@@ -855,13 +864,14 @@ footer p{color:var(--text3);font-size:11.5px;}
       <div class="compare-side reveal">
         <span class="compare-tag good">Com sistema</span>
         <div class="mini-mock">
-          <div class="pm-grid" style="padding:16px;">
-            <div class="pm-grid-cell"><svg class="ic"><use href="#ic-home"/></svg></div>
-            <div class="pm-grid-cell"><svg class="ic"><use href="#ic-shield"/></svg></div>
-            <div class="pm-grid-cell"><svg class="ic"><use href="#ic-signal"/></svg></div>
-            <div class="pm-grid-cell"><svg class="ic"><use href="#ic-check"/></svg></div>
-            <div class="pm-grid-cell"><svg class="ic"><use href="#ic-content"/></svg></div>
-            <div class="pm-grid-cell"><svg class="ic"><use href="#ic-home"/></svg></div>
+          <div class="freq-tabs"><span class="freq-tab">Publicações</span></div>
+          <div class="freq-grid">
+            <div class="freq-cell"><svg class="ic"><use href="#ic-home"/></svg><span class="freq-cat">Imóvel</span></div>
+            <div class="freq-cell"><svg class="ic"><use href="#ic-shield"/></svg><span class="freq-cat">Autoridade</span></div>
+            <div class="freq-cell"><svg class="ic"><use href="#ic-signal"/></svg><span class="freq-cat">Valor</span></div>
+            <div class="freq-cell"><svg class="ic"><use href="#ic-check"/></svg><span class="freq-cat">Prova</span></div>
+            <div class="freq-cell"><svg class="ic"><use href="#ic-home"/></svg><span class="freq-cat">Imóvel</span></div>
+            <div class="freq-cell"><svg class="ic"><use href="#ic-shield"/></svg><span class="freq-cat">Autoridade</span></div>
           </div>
         </div>
         <p class="compare-caption">Matriz de conteúdo com objetivo em cada post — todo post sabe o que quer do&nbsp;comprador</p>
