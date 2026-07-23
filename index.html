@@ -412,9 +412,11 @@ p,li{text-wrap:pretty;}
 /* ============ QUEM SOMOS ============ */
 .qs-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-bottom:26px;}
 .qs-card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:28px;}
-.qs-avatar{width:52px;height:52px;border-radius:14px;background:var(--grad);margin-bottom:16px;}
-.qs-card h3{font-size:17px;margin-bottom:8px;}
-.qs-card .role{font-size:11.5px;color:rgba(255,255,255,0.45);font-weight:700;margin-bottom:14px;}
+.qs-head{display:flex;align-items:center;gap:16px;margin-bottom:18px;}
+.qs-avatar{width:76px;height:76px;border-radius:16px;overflow:hidden;flex-shrink:0;box-shadow:0 0 0 1px rgba(255,255,255,0.08);}
+.qs-avatar img{width:100%;height:100%;object-fit:cover;display:block;}
+.qs-card h3{font-size:17px;margin-bottom:6px;}
+.qs-card .role{font-size:11.5px;color:rgba(255,255,255,0.45);font-weight:700;margin-bottom:0;}
 .qs-card p{font-size:13px;color:var(--text2);line-height:1.65;margin-bottom:10px;}
 .qs-together{text-align:center;max-width:660px;margin:0 auto;color:var(--text2);font-size:14.5px;}
 @media(max-width:700px){.qs-grid{grid-template-columns:1fr;}}
@@ -1079,17 +1081,25 @@ footer p{color:var(--text3);font-size:11.5px;}
     </div>
     <div class="qs-grid">
       <div class="qs-card reveal">
-        <div class="qs-avatar"></div>
-        <h3>Erik Tafuri</h3>
-        <div class="role">Fundador — Arrive In Digital</div>
+        <div class="qs-head">
+          <div class="qs-avatar"><img src="assets/quem-somos-erik.jpg" alt="Erik Tafuri"></div>
+          <div>
+            <h3>Erik Tafuri</h3>
+            <div class="role">Fundador — Arrive In Digital</div>
+          </div>
+        </div>
         <p>Mais de 200 estruturas digitais construídas no mercado imobiliário. Mais de 7 dígitos gerenciados em tráfego. Mais de uma década atuando no&nbsp;digital.</p>
         <p>Cresceu dentro do mercado — o pai dele teve imobiliária. Antes de rodar tráfego, já entendia o jogo: como o cliente pensa, como o corretor trabalha e onde as vendas&nbsp;travam.</p>
         <p>Hoje é responsável por estruturar operações digitais que conectam posicionamento, conteúdo e resultado comercial de&nbsp;verdade.</p>
       </div>
       <div class="qs-card reveal">
-        <div class="qs-avatar"></div>
-        <h3>Miguel Maulim</h3>
-        <div class="role">Sócio-Fundador — Arrive In Digital</div>
+        <div class="qs-head">
+          <div class="qs-avatar"><img src="assets/quem-somos-miguel.jpg" alt="Miguel Maulim"></div>
+          <div>
+            <h3>Miguel Maulim</h3>
+            <div class="role">Sócio-Fundador — Arrive In Digital</div>
+          </div>
+        </div>
         <p>Atuou diretamente dentro da operação de uma das maiores imobiliárias da região. Responsável por transformar conteúdo em resultado comercial na&nbsp;prática.</p>
         <p>Eu não comecei no marketing. Comecei no comercial, como SDR, lidando com lead frio, meta alta e pressão diária todos os dias. Depois assumi o marketing dessa operação, e foi ali que ficou claro: não é falta de lead. É falta de posicionamento e de conteúdo por trás do&nbsp;lead.</p>
       </div>
