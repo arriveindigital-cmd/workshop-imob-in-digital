@@ -359,8 +359,8 @@ p,li{text-wrap:pretty;}
 /* ============ INVESTIMENTO ============ */
 .inv-head h2{font-weight:500;}
 .inv-head h2 b{font-weight:900;}
-.inv-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;}
-.custaria-list{display:flex;flex-direction:column;}
+.inv-grid{display:flex;flex-wrap:wrap;gap:60px;align-items:center;justify-content:center;}
+.custaria-list{display:flex;flex-direction:column;flex:0 1 380px;}
 .custaria-heading{font-size:20px;color:#fff;margin-bottom:14px;}
 .custaria-item{padding:8px 0;}
 .custaria-item .name{display:block;font-size:14px;color:#fff;}
@@ -370,7 +370,7 @@ p,li{text-wrap:pretty;}
 .custaria-total .label{display:block;font-size:16px;font-weight:800;color:#fff;margin-bottom:4px;}
 .custaria-total .val{font-size:15px;color:var(--text3);text-decoration:line-through;}
 
-.ticket{position:relative;background:#fff;border-radius:20px;box-shadow:0 25px 60px rgba(0,0,0,0.4);display:flex;}
+.ticket{position:relative;background:#fff;border-radius:20px;box-shadow:0 25px 60px rgba(0,0,0,0.4);display:flex;max-width:460px;}
 .ticket-main{flex:1;min-width:0;border-radius:20px 0 0 20px;overflow:hidden;}
 .ticket-photo{position:relative;height:170px;}
 .ticket-photo-img{width:100%;height:100%;object-fit:cover;object-position:center 12%;display:block;}
@@ -1012,7 +1012,7 @@ footer p{color:var(--text3);font-size:11.5px;}
 <section id="investimento" class="section bg-investimento">
   <div class="container">
     <div class="head-center inv-head reveal">
-      <h2>Esse é o <b>investimento</b></h2>
+      <h2>Esse é o investimento para participar do&nbsp;<b>Workshop</b>:</h2>
     </div>
     <div class="inv-grid">
       <div class="custaria-list reveal">
