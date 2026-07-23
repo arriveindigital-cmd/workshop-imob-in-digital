@@ -318,16 +318,10 @@ p,li{text-wrap:pretty;}
 .curr-left h2{font-size:32px;margin-bottom:12px;}
 .curr-left p{color:var(--text2);font-size:15px;}
 
-/* cards empilhados — cada um sobe e para (sticky), o proximo cobre por cima */
-.curr-stack-item{height:420px;}
+/* cards empilhados — mesmo top pra todos, o de baixo sobe e cobre o de cima por completo */
+.curr-stack-item{height:90vh;}
 .curr-stack-item:last-child{height:auto;}
-.curr-card2{position:sticky;background:#141414;border:1px solid var(--border);border-radius:16px;padding:26px;box-shadow:0 24px 50px rgba(0,0,0,0.45);}
-.curr-stack-item:nth-child(1) .curr-card2{top:90px;}
-.curr-stack-item:nth-child(2) .curr-card2{top:110px;}
-.curr-stack-item:nth-child(3) .curr-card2{top:130px;}
-.curr-stack-item:nth-child(4) .curr-card2{top:150px;}
-.curr-stack-item:nth-child(5) .curr-card2{top:170px;}
-.curr-stack-item:nth-child(6) .curr-card2{top:190px;}
+.curr-card2{position:sticky;top:120px;background:#141414;border:1px solid var(--border);border-radius:16px;padding:26px;box-shadow:0 24px 50px rgba(0,0,0,0.45);}
 .curr-card2-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;}
 .curr-card2-num{font-size:26px;font-weight:800;}
 .curr-card2-icon{width:32px;height:32px;border-radius:9px;background:var(--grad);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
