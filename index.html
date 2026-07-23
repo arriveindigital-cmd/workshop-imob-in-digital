@@ -235,6 +235,36 @@ p,li{text-wrap:pretty;}
 .arc-arrow-badge{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;background:var(--grad);flex-shrink:0;}
 .arc-arrow-badge .ic{width:15px;height:15px;color:#fff;transform:rotate(90deg);}
 
+/* ============ SEM SISTEMA VS COM SISTEMA — seções individuais com mockups reais ============ */
+.compare-block{padding:64px 0;}
+.compare-head{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:36px;}
+.compare-num{width:28px;height:28px;border-radius:9px;background:var(--grad);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:#fff;flex-shrink:0;}
+.compare-head h3{font-size:24px;color:#0a0a0a;}
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;max-width:860px;margin:0 auto;align-items:start;}
+.compare-side{display:flex;flex-direction:column;align-items:center;gap:16px;text-align:center;}
+.compare-tag{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;padding:5px 14px;border-radius:20px;}
+.compare-tag.bad{background:rgba(225,29,72,0.1);color:#e11d48;}
+.compare-tag.good{background:rgba(16,185,129,0.12);color:#059669;}
+.compare-caption{font-size:13.5px;line-height:1.5;color:rgba(0,0,0,0.6);max-width:280px;}
+@media(max-width:800px){.compare-grid{grid-template-columns:1fr;max-width:320px;}}
+
+.mini-mock{width:100%;max-width:280px;background:#141414;border:1px solid var(--border);border-radius:14px;overflow:hidden;box-shadow:0 14px 34px rgba(0,0,0,0.18);}
+
+/* post mockup */
+.post-mock-photo{aspect-ratio:1;background:linear-gradient(135deg,#2a2a2a,#1a1a1a);display:flex;align-items:center;justify-content:center;}
+.post-mock-photo .ic{width:34px;height:34px;color:rgba(255,255,255,0.25);}
+.post-mock-caption{padding:14px 16px;}
+.pmc-line1{font-size:12.5px;color:var(--text2);line-height:1.4;}
+.pmc-line1.highlight{color:#fff;font-weight:700;}
+.pmc-line2{font-size:11px;color:var(--text3);margin-top:6px;}
+
+/* bio mockup */
+.bio-mock-row{display:flex;align-items:center;gap:10px;padding:16px 16px 12px;}
+.bio-mock-name{font-size:13px;font-weight:700;color:#fff;}
+.bio-mock-lines{padding:0 16px 16px;display:flex;flex-direction:column;gap:7px;}
+.bio-line{font-size:12px;color:var(--text2);}
+.bio-line.highlight{font-weight:700;}
+
 /* ============ SEM SISTEMA VS COM SISTEMA ============ */
 .compact-compare{max-width:840px;margin:0 auto;display:flex;flex-direction:column;gap:10px;}
 .cc-row{display:grid;grid-template-columns:100px 1fr 1fr;gap:16px;align-items:center;padding:16px 20px;background:var(--card);border-radius:12px;border:1px solid var(--border);}
@@ -550,18 +580,73 @@ footer p{color:var(--text3);font-size:11.5px;}
     <div class="head-center reveal">
       <h2>Sem sistema vs. com&nbsp;sistema</h2>
     </div>
+  </div>
+</section>
 
+<section class="section compare-block section-light">
+  <div class="container">
+    <div class="compare-head reveal"><span class="compare-num">01</span><h3>O post</h3></div>
+    <div class="compare-grid">
+      <div class="compare-side reveal">
+        <span class="compare-tag bad">Sem sistema</span>
+        <div class="mini-mock">
+          <div class="post-mock-photo"><svg class="ic"><use href="#ic-home"/></svg></div>
+          <div class="post-mock-caption">
+            <div class="pmc-line1">R$ 450.000 · 3 quartos · 2 vagas</div>
+          </div>
+        </div>
+        <p class="compare-caption">Foto e preço do imóvel, sem dizer pra quem é aquele&nbsp;imóvel</p>
+      </div>
+      <div class="compare-side reveal">
+        <span class="compare-tag good">Com sistema</span>
+        <div class="mini-mock">
+          <div class="post-mock-photo"><svg class="ic"><use href="#ic-home"/></svg></div>
+          <div class="post-mock-caption">
+            <div class="pmc-line1 highlight">Pra quem busca tranquilidade sem abrir mão da localização</div>
+            <div class="pmc-line2">R$ 450.000 · 3 quartos</div>
+          </div>
+        </div>
+        <p class="compare-caption">Cada post comunica pra quem é aquele imóvel — o comprador se reconhece antes de perguntar o&nbsp;preço</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section compare-block section-light" style="background:#f7f7f7;">
+  <div class="container">
+    <div class="compare-head reveal"><span class="compare-num">02</span><h3>A bio</h3></div>
+    <div class="compare-grid">
+      <div class="compare-side reveal">
+        <span class="compare-tag bad">Sem sistema</span>
+        <div class="mini-mock">
+          <div class="bio-mock-row"><div class="pm-avatar"><svg class="ic"><use href="#ic-person"/></svg></div><div class="bio-mock-name">João Silva</div></div>
+          <div class="bio-mock-lines">
+            <div class="bio-line">Corretor de imóveis</div>
+            <div class="bio-line">CRECI ativo</div>
+            <div class="bio-line">Atendo toda a cidade</div>
+          </div>
+        </div>
+        <p class="compare-caption">A mesma bio genérica que 9 em cada 10 corretores da região usam ("Corretor de imóveis | CRECI ativo | Atendo toda a&nbsp;cidade")</p>
+      </div>
+      <div class="compare-side reveal">
+        <span class="compare-tag good">Com sistema</span>
+        <div class="mini-mock">
+          <div class="bio-mock-row"><div class="pm-avatar"><svg class="ic"><use href="#ic-person"/></svg></div><div class="bio-mock-name">João Silva</div></div>
+          <div class="bio-mock-lines">
+            <div class="bio-line">Corretor de alto padrão</div>
+            <div class="bio-line highlight grad-text">Especialista em Zona Sul</div>
+            <div class="bio-line">+7 anos de mercado</div>
+          </div>
+        </div>
+        <p class="compare-caption">Bio com nicho e território declarados — o visitante sabe em 5 segundos se é pra&nbsp;ele</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-light">
+  <div class="container">
     <div class="compact-compare">
-      <div class="cc-row reveal">
-        <span class="cc-label">O post</span>
-        <span class="cc-bad"><svg class="ic"><use href="#ic-x"/></svg> Foto e preço do imóvel, sem dizer pra quem é aquele&nbsp;imóvel</span>
-        <span class="cc-good"><svg class="ic"><use href="#ic-check"/></svg> Cada post comunica pra quem é aquele imóvel — o comprador se reconhece antes de perguntar o&nbsp;preço</span>
-      </div>
-      <div class="cc-row reveal">
-        <span class="cc-label">A bio</span>
-        <span class="cc-bad"><svg class="ic"><use href="#ic-x"/></svg> A mesma bio genérica que 9 em cada 10 corretores da região usam ("Corretor de imóveis | CRECI ativo | Atendo toda a&nbsp;cidade")</span>
-        <span class="cc-good"><svg class="ic"><use href="#ic-check"/></svg> Bio com nicho e território declarados — o visitante sabe em 5 segundos se é pra&nbsp;ele</span>
-      </div>
       <div class="cc-row reveal">
         <span class="cc-label">O anúncio</span>
         <span class="cc-bad"><svg class="ic"><use href="#ic-x"/></svg> Anúncio rodando sem nenhum posicionamento por trás — pagando caro por clique de quem só estava&nbsp;curioso</span>
