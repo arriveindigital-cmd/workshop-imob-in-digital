@@ -371,8 +371,8 @@ p,li{text-wrap:pretty;}
 
 .ticket{position:relative;background:#fff;border-radius:20px;box-shadow:0 25px 60px rgba(0,0,0,0.4);display:flex;max-width:460px;}
 .ticket-main{flex:1;min-width:0;border-radius:20px 0 0 20px;overflow:hidden;display:flex;align-items:stretch;}
-.ticket-photo{position:relative;width:150px;flex-shrink:0;}
-.ticket-photo-img{width:100%;height:100%;object-fit:cover;object-position:center 15%;display:block;}
+.ticket-photo{position:relative;width:200px;flex-shrink:0;}
+.ticket-photo-img{width:100%;height:100%;object-fit:cover;object-position:center 10%;display:block;}
 .ticket-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 45%);}
 .ticket-photo-logo{position:absolute;left:12px;bottom:12px;z-index:1;height:16px;width:auto;max-width:120px;object-fit:contain;}
 .ticket-body{flex:1;min-width:0;padding:20px 22px;background:#fff;display:flex;flex-direction:column;}
@@ -387,7 +387,6 @@ p,li{text-wrap:pretty;}
 .ticket-price-row.new .new .rs{font-size:18px;font-weight:700;margin-right:2px;}
 .ticket-price-row.new .new .cents{font-size:19px;font-weight:700;}
 .ticket .btn{width:100%;justify-content:center;}
-.ticket-btn{border:2px solid rgba(124,58,237,0.45);}
 .ticket-body .progress-bar-bg{background:rgba(0,0,0,0.1);}
 .ticket-body .progress-bar-fill{background:var(--grad);}
 .ticket-progress-cap{font-size:11px;color:rgba(0,0,0,0.45);margin-top:12px;text-align:center;}
@@ -1018,15 +1017,15 @@ footer p{color:var(--text3);font-size:11.5px;}
         <h3 class="custaria-heading">Quanto custaria tudo?</h3>
         <div class="custaria-item">
           <span class="name">Consultoria de posicionamento digital</span>
-          <span class="val">Valor - A partir de R$ 997,00</span>
+          <span class="val">Valor - <s>A partir de R$ 997,00</s></span>
         </div>
         <div class="custaria-item">
           <span class="name">Planejamento de conteúdo estratégico</span>
-          <span class="val">Valor - A partir de R$ 997,00</span>
+          <span class="val">Valor - <s>A partir de R$ 997,00</s></span>
         </div>
         <div class="custaria-item">
           <span class="name">Produção de criativo/anúncio profissional</span>
-          <span class="val">Valor - A partir de R$ 497,00</span>
+          <span class="val">Valor - <s>A partir de R$ 497,00</s></span>
         </div>
         <div class="custaria-total">
           <span class="label">Investimento total</span>
@@ -1036,7 +1035,7 @@ footer p{color:var(--text3);font-size:11.5px;}
       <div class="ticket reveal">
         <div class="ticket-main">
           <div class="ticket-photo">
-            <img src="assets/hero-experts.png" class="ticket-photo-img" alt="Erik Tafuri e Miguel Maulim">
+            <img src="assets/ticket-experts.png" class="ticket-photo-img" alt="Erik Tafuri e Miguel Maulim">
             <img src="assets/logo-workshop.png" class="ticket-photo-logo" alt="Workshop Imob In Digital">
           </div>
           <div class="ticket-body">
@@ -1046,7 +1045,7 @@ footer p{color:var(--text3);font-size:11.5px;}
               <div class="ticket-price-row old"><span class="label">De</span><span class="old">R$ 79,00</span></div>
               <div class="ticket-price-row new"><span class="label">Por</span><span class="new"><span class="rs">R$</span> 19<span class="cents">,00</span></span></div>
             </div>
-            <a href="#" class="btn ticket-btn">Comprar&nbsp;Ingresso</a>
+            <a href="#" class="btn btn-glass ticket-btn">Comprar&nbsp;Ingresso</a>
             <div class="progress-bar-bg"><div class="progress-bar-fill" id="progress-fill-ticket"></div></div>
             <div class="ticket-progress-cap"><b id="progress-pct-ticket">0%</b> dos ingressos vendidos a R$&nbsp;19</div>
           </div>
