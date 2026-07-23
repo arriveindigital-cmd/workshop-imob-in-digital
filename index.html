@@ -110,15 +110,15 @@ p,li{text-wrap:pretty;}
   object-fit:contain;object-position:bottom right;
 }
 @media(max-width:1000px){
-  #hero{min-height:0;}
-  .hero-row{min-height:0;display:block;padding:118px 24px 40px;}
+  #hero{min-height:100vh;}
+  .hero-row{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:118px 24px 40px;box-sizing:border-box;}
   .hero-photo{display:none;}
   #hero{
     background:
       radial-gradient(ellipse 900px 700px at 100% 0%, rgba(124,58,237,0.4), transparent 60%),
       #000 url(assets/bg-hero-mobile.jpg) center/cover no-repeat;
   }
-  #hero::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.82) 55%, rgba(0,0,0,0.94) 100%);}
+  #hero::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.55) 55%, rgba(0,0,0,0.78) 100%);}
   .hero-top-inner{flex-direction:column;gap:8px;padding:14px 20px;text-align:center;}
   .hero-logo{height:30px;}
   .hero-date{font-size:11px;padding:7px 14px;}
