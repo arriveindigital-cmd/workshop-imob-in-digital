@@ -369,10 +369,13 @@ p,li{text-wrap:pretty;}
 .custaria-total .label{display:block;font-size:16px;font-weight:800;color:#fff;margin-bottom:4px;}
 .custaria-total .val{font-size:15px;color:var(--text3);text-decoration:line-through;}
 
-.ticket{position:relative;background:#fcfcfc;border-radius:9px;box-shadow:0 20px 50px rgba(0,0,0,0.4);display:flex;width:800px;max-width:100%;}
-.ticket-notch{position:absolute;right:86px;width:24px;height:24px;border-radius:50%;background:#1a1420;z-index:3;}
-.ticket-notch.top{top:-12px;}
-.ticket-notch.bottom{bottom:-12px;}
+.ticket{position:relative;width:800px;max-width:100%;box-shadow:0 20px 50px rgba(0,0,0,0.4);border-radius:9px;}
+.ticket-shape{display:flex;width:100%;background:#fcfcfc;border-radius:9px;
+  mask-image:radial-gradient(circle 24px at calc(100% - 110px) 0,transparent 98%,black 101%),radial-gradient(circle 24px at calc(100% - 110px) 100%,transparent 98%,black 101%);
+  mask-size:100% 50.5%;
+  mask-position:top,bottom;
+  mask-repeat:no-repeat;
+}
 .ticket-main{flex:1;min-width:0;border-radius:9px 0 0 9px;overflow:hidden;display:flex;align-items:stretch;background:#fcfcfc;}
 .ticket-photo{position:relative;width:270px;flex-shrink:0;padding:14px;box-sizing:border-box;}
 .ticket-photo-img{width:100%;height:100%;object-fit:cover;object-position:center 100%;display:block;border-radius:6px;}
@@ -395,7 +398,7 @@ p,li{text-wrap:pretty;}
 .ticket-stub{width:169px;flex-shrink:0;position:relative;display:flex;align-items:center;justify-content:center;border-radius:0 9px 9px 0;overflow:hidden;background:#fcfcfc;}
 .ticket-stub::before{content:'';position:absolute;left:57px;top:22px;bottom:22px;width:2px;background:repeating-linear-gradient(#181818 0 19px, transparent 19px 29px);}
 .barcode-v{width:305px;height:34px;background:repeating-linear-gradient(90deg,#101820 0 2px,transparent 2px 5px,#101820 5px 6px,transparent 6px 10px);transform:rotate(90deg);margin-left:40px;}
-@media(max-width:600px){.ticket{flex-direction:column;}.ticket-main{border-radius:9px;flex-direction:column;}.ticket-photo{width:100%;height:300px;padding:14px 14px 0 14px;}.ticket-photo-img{object-position:center 8%;border-radius:6px 6px 0 0;}.ticket-body{padding:16px 20px 20px;}.ticket-stub,.ticket-notch{display:none;}}
+@media(max-width:600px){.ticket-shape{flex-direction:column;mask-image:none;}.ticket-main{border-radius:9px;flex-direction:column;}.ticket-photo{width:100%;height:300px;padding:14px 14px 0 14px;}.ticket-photo-img{object-position:center 8%;border-radius:6px 6px 0 0;}.ticket-body{padding:16px 20px 20px;}.ticket-stub{display:none;}}
 @media(max-width:820px){.inv-grid{grid-template-columns:1fr;}}
 
 /* ============ GARANTIA ============ */
@@ -1033,6 +1036,7 @@ footer p{color:var(--text3);font-size:11.5px;}
         </div>
       </div>
       <div class="ticket reveal">
+        <div class="ticket-shape">
         <div class="ticket-main">
           <div class="ticket-photo">
             <img src="assets/ticket-experts-final.png" class="ticket-photo-img" alt="Erik Tafuri e Miguel Maulim">
@@ -1049,10 +1053,9 @@ footer p{color:var(--text3);font-size:11.5px;}
             <div class="ticket-progress-cap"><b id="progress-pct-ticket">0%</b> dos ingressos vendidos a R$&nbsp;19</div>
           </div>
         </div>
-        <span class="ticket-notch top"></span>
-        <span class="ticket-notch bottom"></span>
         <div class="ticket-stub">
           <div class="barcode-v"></div>
+        </div>
         </div>
       </div>
     </div>
