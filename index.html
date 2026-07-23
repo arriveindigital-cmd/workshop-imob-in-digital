@@ -369,21 +369,15 @@ p,li{text-wrap:pretty;}
 .custaria-total .label{display:block;font-size:16px;font-weight:800;color:#fff;margin-bottom:4px;}
 .custaria-total .val{font-size:15px;color:var(--text3);text-decoration:line-through;}
 
-.ticket{position:relative;background:#fcfcfc;border-radius:9px;box-shadow:0 20px 50px rgba(0,0,0,0.4);display:flex;width:800px;max-width:100%;
-  mask-image:radial-gradient(circle 24px at calc(100% - 110px) 0,transparent 98%,black 101%),radial-gradient(circle 24px at calc(100% - 110px) 100%,transparent 98%,black 101%);
-  mask-size:100% 50.5%;
-  mask-position:top,bottom;
-  mask-repeat:no-repeat;
-  -webkit-mask-image:radial-gradient(circle 24px at calc(100% - 110px) 0,transparent 98%,black 101%),radial-gradient(circle 24px at calc(100% - 110px) 100%,transparent 98%,black 101%);
-  -webkit-mask-size:100% 50.5%;
-  -webkit-mask-position:top,bottom;
-  -webkit-mask-repeat:no-repeat;
-}
+.ticket{position:relative;background:#fcfcfc;border-radius:9px;box-shadow:0 20px 50px rgba(0,0,0,0.4);display:flex;width:800px;max-width:100%;}
+.ticket-notch{position:absolute;right:86px;width:24px;height:24px;border-radius:50%;background:#1a1420;z-index:3;}
+.ticket-notch.top{top:-12px;}
+.ticket-notch.bottom{bottom:-12px;}
 .ticket-main{flex:1;min-width:0;border-radius:9px 0 0 9px;overflow:hidden;display:flex;align-items:stretch;background:#fcfcfc;}
 .ticket-photo{position:relative;width:270px;flex-shrink:0;padding:14px;box-sizing:border-box;}
 .ticket-photo-img{width:100%;height:100%;object-fit:cover;object-position:center 100%;display:block;border-radius:6px;}
 .ticket-body{flex:1;min-width:0;padding:20px 26px 20px 14px;background:#fcfcfc;display:flex;flex-direction:column;}
-.ticket-date{display:flex;align-items:center;gap:8px;font-size:18px;color:#111;margin-bottom:10px;white-space:nowrap;}
+.ticket-date{display:flex;align-items:center;gap:6px;font-size:15px;color:#111;margin-bottom:10px;white-space:nowrap;}
 .ticket-date b{font-weight:700;}
 .ticket-date .ic{color:#111;flex-shrink:0;}
 .ticket-desc{font-size:14px;color:#686868;line-height:1.4;margin-bottom:16px;padding-bottom:16px;border-bottom:1px solid #dedede;min-height:2.8em;}
@@ -1055,6 +1049,8 @@ footer p{color:var(--text3);font-size:11.5px;}
             <div class="ticket-progress-cap"><b id="progress-pct-ticket">0%</b> dos ingressos vendidos a R$&nbsp;19</div>
           </div>
         </div>
+        <span class="ticket-notch top"></span>
+        <span class="ticket-notch bottom"></span>
         <div class="ticket-stub">
           <div class="barcode-v"></div>
         </div>
