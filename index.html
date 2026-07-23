@@ -372,8 +372,8 @@ p,li{text-wrap:pretty;}
 
 .ticket{position:relative;background:#fff;border-radius:20px;box-shadow:0 25px 60px rgba(0,0,0,0.4);display:flex;max-width:460px;}
 .ticket-main{flex:1;min-width:0;border-radius:20px 0 0 20px;overflow:hidden;}
-.ticket-photo{position:relative;height:260px;}
-.ticket-photo-img{width:100%;height:100%;object-fit:cover;object-position:center 8%;display:block;}
+.ticket-photo{position:relative;height:260px;background:#fff;}
+.ticket-photo-img{width:100%;height:100%;object-fit:contain;object-position:center 90%;display:block;}
 .ticket-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 55%);}
 .ticket-photo-logo{position:absolute;left:16px;bottom:12px;z-index:1;height:18px;width:auto;max-width:140px;object-fit:contain;}
 .ticket-body{padding:22px 24px;background:#fff;}
@@ -1049,7 +1049,7 @@ footer p{color:var(--text3);font-size:11.5px;}
             </div>
             <a href="#" class="btn ticket-btn">Comprar&nbsp;Ingresso</a>
             <div class="progress-bar-bg"><div class="progress-bar-fill" id="progress-fill-ticket"></div></div>
-            <div class="ticket-progress-cap"><b id="progress-pct-ticket">0%</b> das vagas preenchidas</div>
+            <div class="ticket-progress-cap"><b id="progress-pct-ticket">0%</b> dos ingressos vendidos a R$&nbsp;19</div>
           </div>
         </div>
         <span class="stub-notch top"></span>
