@@ -427,7 +427,14 @@ p,li{text-wrap:pretty;}
 .qualif2-block:last-child{margin-bottom:0;}
 .qualif2-block h3{font-size:34px;line-height:1.25;color:#fff;margin-bottom:16px;}
 .qualif2-block p{font-size:15px;line-height:1.7;color:rgba(255,255,255,.6);}
-@media(max-width:700px){.qualif2{padding:72px 0;}.qualif2-block h3{font-size:25px;}}
+.qualif2-block.has-stat{display:flex;flex-wrap:wrap;align-items:center;gap:40px;max-width:900px;}
+.qualif2-block.has-stat .qualif2-text{flex:1 1 320px;max-width:620px;}
+.qualif2-stat{flex:0 0 210px;background:#fff;border-radius:18px;padding:26px 28px;text-align:center;box-shadow:0 20px 50px rgba(0,0,0,.4);}
+.qualif2-stat .stat-value{font-size:36px;font-weight:800;color:#0a0a0a;line-height:1;}
+.qualif2-stat .stat-label{font-size:12px;color:rgba(0,0,0,.55);margin-top:8px;line-height:1.4;}
+.qualif2-stat .stat-delta{display:inline-flex;align-items:center;gap:5px;margin-top:16px;background:rgba(225,29,72,0.1);color:#e11d48;font-size:12px;font-weight:800;padding:6px 13px;border-radius:20px;}
+.qualif2-stat .stat-source{font-size:10px;color:rgba(0,0,0,.35);margin-top:10px;}
+@media(max-width:700px){.qualif2{padding:72px 0;}.qualif2-block h3{font-size:25px;}.qualif2-block.has-stat{gap:24px;}.qualif2-stat{flex:1 1 100%;}}
 
 /* ============ FAQ ============ */
 .faq-item{border-bottom:1px solid var(--border);max-width:760px;margin:0 auto;}
@@ -1118,9 +1125,17 @@ footer p{color:var(--text3);font-size:11.5px;}
       <h3>Esse sistema funciona pra quem está&nbsp;começando?</h3>
       <p>Funciona tanto pra quem já vende, mas de forma inconsistente, quanto pra quem está começando agora. O sistema é construído do zero durante o evento — você não precisa ter nada pronto antes. O que muda é o ponto de partida: quem já vende sai ajustando o que existe; quem está começando sai com a base inteira&nbsp;construída.</p>
     </div>
-    <div class="qualif2-block reveal">
-      <h3>Como saber se é a hora de fazer&nbsp;isso</h3>
-      <p>Se você já vende de forma inconsistente — mês bom, mês ruim, sem saber de onde vem a próxima venda — é a hora. Se você trata posicionamento, conteúdo e anúncio como coisas separadas (ou nenhuma delas de forma intencional), é a hora. Quanto mais corretor entra no digital sem sistema, mais caro fica competir por atenção depois — 650 mil corretores ativos no Brasil, crescimento de 195% em 15 anos (COFECI).</p>
+    <div class="qualif2-block has-stat reveal">
+      <div class="qualif2-text">
+        <h3>Como saber se é a hora de fazer&nbsp;isso</h3>
+        <p>Se você já vende de forma inconsistente — mês bom, mês ruim, sem saber de onde vem a próxima venda — é a hora. Se você trata posicionamento, conteúdo e anúncio como coisas separadas (ou nenhuma delas de forma intencional), é a hora. Quanto mais corretor entra no digital sem sistema, mais caro fica competir por atenção&nbsp;depois.</p>
+      </div>
+      <div class="qualif2-stat">
+        <div class="stat-value">650 mil</div>
+        <div class="stat-label">corretores ativos no&nbsp;Brasil</div>
+        <div class="stat-delta">▲ +195% em 15 anos</div>
+        <div class="stat-source">Fonte: COFECI</div>
+      </div>
     </div>
   </div>
 </section>
