@@ -51,7 +51,7 @@ p,li{text-wrap:pretty;}
 .bg-mecanismo{background:#000 url(assets/bg-mecanismo.jpg) top center/100% auto no-repeat;}
 .bg-curriculo{background:#000 url(assets/bg-curriculo.jpg) center/cover no-repeat;}
 .bg-depoimentos{background:#000 url(assets/bg-depoimentos.jpg) center/cover no-repeat;}
-.bg-investimento{background:#000 url(assets/bg-mecanismo.jpg) right center/cover no-repeat;}
+.bg-investimento{background:#000 url(assets/bg-hero-mobile.jpg) right center/cover no-repeat;}
 
 /* ============ HERO ============ */
 #hero{
@@ -369,7 +369,12 @@ p,li{text-wrap:pretty;}
 .custaria-total .label{display:block;font-size:16px;font-weight:800;color:#fff;margin-bottom:4px;}
 .custaria-total .val{font-size:15px;color:var(--text3);text-decoration:line-through;}
 
-.ticket{position:relative;background:#fff;border-radius:20px;box-shadow:0 25px 60px rgba(0,0,0,0.4);display:flex;max-width:620px;}
+.ticket{position:relative;background:#fff;border-radius:20px;box-shadow:0 25px 60px rgba(0,0,0,0.4);display:flex;max-width:680px;
+  -webkit-mask-image:linear-gradient(#000,#000),radial-gradient(circle 16px at calc(100% - 34px) 0px,#000 100%,transparent 100%),radial-gradient(circle 16px at calc(100% - 34px) 100%,#000 100%,transparent 100%);
+  -webkit-mask-composite:source-over,destination-out,destination-out;
+  mask-image:linear-gradient(#000,#000),radial-gradient(circle 16px at calc(100% - 34px) 0px,#000 100%,transparent 100%),radial-gradient(circle 16px at calc(100% - 34px) 100%,#000 100%,transparent 100%);
+  mask-composite:add,subtract,subtract;
+}
 .ticket-main{flex:1;min-width:0;border-radius:20px 0 0 20px;overflow:hidden;display:flex;align-items:stretch;}
 .ticket-photo{position:relative;width:220px;flex-shrink:0;}
 .ticket-photo-img{width:100%;height:100%;object-fit:cover;object-position:70% 20%;display:block;}
@@ -391,11 +396,8 @@ p,li{text-wrap:pretty;}
 .ticket-body .progress-bar-fill{background:var(--grad);}
 .ticket-progress-cap{font-size:11px;color:rgba(0,0,0,0.45);margin-top:12px;text-align:center;}
 .ticket-stub{width:52px;flex-shrink:0;position:relative;border-left:2px dashed rgba(0,0,0,0.18);display:flex;align-items:center;justify-content:center;border-radius:0 20px 20px 0;overflow:hidden;background:#fff;}
-.stub-notch{position:absolute;right:-17px;width:34px;height:34px;border-radius:50%;background:#0a0a0a;z-index:2;}
-.stub-notch.top{top:-17px;}
-.stub-notch.bottom{bottom:-17px;}
 .barcode-v{width:90px;height:16px;background:repeating-linear-gradient(90deg,rgba(0,0,0,0.85) 0 2px,transparent 2px 5px);transform:rotate(90deg);}
-@media(max-width:600px){.ticket{flex-direction:column;}.ticket-main{border-radius:20px 20px 0 0;}.ticket-stub{width:auto;height:24px;border-left:none;border-top:2px dashed rgba(0,0,0,0.18);border-radius:0 0 20px 20px;}.stub-notch{right:auto;left:50%;transform:translateX(-50%);}.stub-notch.top{top:-17px;}.stub-notch.bottom{bottom:-17px;}.barcode-v{transform:none;}}
+@media(max-width:600px){.ticket{flex-direction:column;}.ticket-main{border-radius:20px 20px 0 0;}.ticket-stub{width:auto;height:24px;border-left:none;border-top:2px dashed rgba(0,0,0,0.18);border-radius:0 0 20px 20px;}.barcode-v{transform:none;}}
 @media(max-width:820px){.inv-grid{grid-template-columns:1fr;}}
 
 /* ============ GARANTIA ============ */
@@ -1050,8 +1052,6 @@ footer p{color:var(--text3);font-size:11.5px;}
             <div class="ticket-progress-cap"><b id="progress-pct-ticket">0%</b> dos ingressos vendidos a R$&nbsp;19</div>
           </div>
         </div>
-        <span class="stub-notch top"></span>
-        <span class="stub-notch bottom"></span>
         <div class="ticket-stub">
           <div class="barcode-v"></div>
         </div>
