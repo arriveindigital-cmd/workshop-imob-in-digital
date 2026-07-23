@@ -422,9 +422,12 @@ p,li{text-wrap:pretty;}
 @media(max-width:700px){.qs-grid{grid-template-columns:1fr;}}
 
 /* ============ QUALIFICAÇÃO ============ */
-.qualif{padding:56px 0;}
+.qualif{padding:64px 0;}
+.qualif-card{max-width:680px;margin:0 auto;background:#fff;border-radius:16px;padding:32px 34px;box-shadow:0 8px 30px rgba(0,0,0,.06);border:1px solid rgba(0,0,0,.05);}
+.qualif-icon{width:40px;height:40px;border-radius:10px;background:var(--grad);display:flex;align-items:center;justify-content:center;margin-bottom:16px;}
+.qualif-icon svg{width:20px;height:20px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
 .qualif h3{font-size:19px;margin-bottom:10px;}
-.qualif p{color:rgba(0,0,0,.6);font-size:14px;max-width:700px;}
+.qualif p{color:rgba(0,0,0,.6);font-size:14px;}
 
 /* ============ FAQ ============ */
 .faq-item{border-bottom:1px solid var(--border);max-width:760px;margin:0 auto;}
@@ -1109,16 +1112,22 @@ footer p{color:var(--text3);font-size:11.5px;}
 </section>
 
 <!-- ============================================================ QUALIFICAÇÃO -->
-<section class="qualif section-light" style="border-bottom:1px solid rgba(0,0,0,0.06);">
+<section class="qualif" style="background:#f0f0f0;color:#0a0a0a;border-bottom:1px solid rgba(0,0,0,0.06);">
   <div class="container reveal">
-    <h3>Esse sistema funciona pra quem está&nbsp;começando?</h3>
-    <p>Funciona tanto pra quem já vende, mas de forma inconsistente, quanto pra quem está começando agora. O sistema é construído do zero durante o evento — você não precisa ter nada pronto antes. O que muda é o ponto de partida: quem já vende sai ajustando o que existe; quem está começando sai com a base inteira&nbsp;construída.</p>
+    <div class="qualif-card">
+      <div class="qualif-icon"><svg><use href="#ic-person"/></svg></div>
+      <h3>Esse sistema funciona pra quem está&nbsp;começando?</h3>
+      <p>Funciona tanto pra quem já vende, mas de forma inconsistente, quanto pra quem está começando agora. O sistema é construído do zero durante o evento — você não precisa ter nada pronto antes. O que muda é o ponto de partida: quem já vende sai ajustando o que existe; quem está começando sai com a base inteira&nbsp;construída.</p>
+    </div>
   </div>
 </section>
 <section class="qualif" style="background:#f7f7f7;color:#0a0a0a;">
   <div class="container reveal">
-    <h3>Como saber se é a hora de fazer&nbsp;isso</h3>
-    <p>Se você já vende de forma inconsistente — mês bom, mês ruim, sem saber de onde vem a próxima venda — é a hora. Se você trata posicionamento, conteúdo e anúncio como coisas separadas (ou nenhuma delas de forma intencional), é a hora. Quanto mais corretor entra no digital sem sistema, mais caro fica competir por atenção depois — 650 mil corretores ativos no Brasil, crescimento de 195% em 15 anos (COFECI).</p>
+    <div class="qualif-card">
+      <div class="qualif-icon"><svg><use href="#ic-signal"/></svg></div>
+      <h3>Como saber se é a hora de fazer&nbsp;isso</h3>
+      <p>Se você já vende de forma inconsistente — mês bom, mês ruim, sem saber de onde vem a próxima venda — é a hora. Se você trata posicionamento, conteúdo e anúncio como coisas separadas (ou nenhuma delas de forma intencional), é a hora. Quanto mais corretor entra no digital sem sistema, mais caro fica competir por atenção depois — 650 mil corretores ativos no Brasil, crescimento de 195% em 15 anos (COFECI).</p>
+    </div>
   </div>
 </section>
 
