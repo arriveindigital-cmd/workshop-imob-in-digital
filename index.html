@@ -320,9 +320,9 @@ p,li{text-wrap:pretty;}
 /* seção inteira trava (pin) e so libera o scroll depois que todos os cards subirem e se empilharem, tipo baralho */
 .curr-pin-wrap{position:relative;height:500vh;}
 .curr-pin-sticky{position:sticky;top:0;height:100vh;display:flex;align-items:center;overflow:hidden;}
-.curr-stack{position:relative;height:280px;}
-.curr-card2{position:absolute;left:0;right:0;background:#141414;border:1px solid var(--border);border-radius:16px;padding:26px;box-shadow:0 24px 50px rgba(0,0,0,0.45);opacity:0;transform:translateY(70px);transition:opacity .5s ease, transform .5s ease;}
-.curr-card2.revealed{opacity:1;transform:translateY(0);}
+.curr-stack{position:relative;height:340px;overflow:hidden;}
+.curr-card2{position:absolute;left:0;right:0;height:260px;box-sizing:border-box;background:#141414;border:1px solid var(--border);border-radius:16px;padding:26px;box-shadow:0 24px 50px rgba(0,0,0,0.45);transform:translateY(180px);transition:transform .6s cubic-bezier(.22,.9,.32,1);}
+.curr-card2.revealed{transform:translateY(0);}
 .curr-card2:nth-child(1){top:0px;z-index:1;}
 .curr-card2:nth-child(2){top:14px;z-index:2;}
 .curr-card2:nth-child(3){top:28px;z-index:3;}
@@ -335,7 +335,7 @@ p,li{text-wrap:pretty;}
 .curr-card2-icon .ic{width:16px;height:16px;color:#fff;}
 .curr-card2 h4{font-size:15px;color:#fff;margin-bottom:8px;}
 .curr-card2 p{font-size:12.5px;line-height:1.6;color:var(--text2);}
-@media(max-width:820px){.curr-grid{grid-template-columns:1fr;gap:20px;}.curr-stack{height:320px;}}
+@media(max-width:820px){.curr-grid{grid-template-columns:1fr;gap:20px;}.curr-stack{height:400px;}.curr-card2{height:320px;}}
 
 /* ============ TRANSIÇÃO ============ */
 .transicao{background:var(--grad);padding:64px 0;text-align:center;}
