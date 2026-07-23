@@ -236,12 +236,12 @@ p,li{text-wrap:pretty;}
 .arc-arrow-badge .ic{width:15px;height:15px;color:#fff;transform:rotate(90deg);}
 
 /* ============ SEM SISTEMA VS COM SISTEMA — seções individuais com mockups reais ============ */
-.compare-block{padding:64px 0;}
-.compare-head{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:36px;}
+.compare-block{padding:34px 0;}
+.compare-head{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:20px;}
 .compare-num{width:28px;height:28px;border-radius:9px;background:var(--grad);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:#fff;flex-shrink:0;}
 .compare-head h3{font-size:24px;color:#0a0a0a;}
 .compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;max-width:860px;margin:0 auto;align-items:start;}
-.compare-side{display:flex;flex-direction:column;align-items:center;gap:16px;text-align:center;}
+.compare-side{display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;}
 .compare-tag{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;padding:5px 14px;border-radius:20px;}
 .compare-tag.bad{background:rgba(225,29,72,0.1);color:#e11d48;}
 .compare-tag.good{background:rgba(16,185,129,0.12);color:#059669;}
@@ -250,19 +250,25 @@ p,li{text-wrap:pretty;}
 
 .mini-mock{width:100%;max-width:280px;background:#141414;border:1px solid var(--border);border-radius:14px;overflow:hidden;box-shadow:0 14px 34px rgba(0,0,0,0.18);}
 
-/* post mockup */
-.post-mock-photo{aspect-ratio:1;background:linear-gradient(135deg,#2a2a2a,#1a1a1a);display:flex;align-items:center;justify-content:center;}
-.post-mock-photo .ic{width:34px;height:34px;color:rgba(255,255,255,0.25);}
-.post-mock-caption{padding:14px 16px;}
-.pmc-line1{font-size:12.5px;color:var(--text2);line-height:1.4;}
-.pmc-line1.highlight{color:#fff;font-weight:700;}
-.pmc-line2{font-size:11px;color:var(--text3);margin-top:6px;}
+/* post mockup — foto real do imóvel + texto sobreposto, como o post sairia de verdade */
+.post-mock{position:relative;aspect-ratio:4/5;background:url(assets/imovel-1.jpg) center/cover;}
+.post-mock::after{content:'';position:absolute;inset:0;background:linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.35) 40%, rgba(0,0,0,0) 68%);}
+.post-mock-text{position:absolute;left:0;right:0;bottom:0;padding:16px;z-index:1;}
+.pmc-line1{font-size:13px;color:#fff;font-weight:700;line-height:1.4;}
+.pmc-line1.highlight{font-size:14px;}
+.pmc-line2{font-size:11px;color:rgba(255,255,255,0.65);margin-top:6px;}
 
-/* bio mockup */
-.bio-mock-row{display:flex;align-items:center;gap:10px;padding:16px 16px 12px;}
-.bio-mock-name{font-size:13px;font-weight:700;color:#fff;}
-.bio-mock-lines{padding:0 16px 16px;display:flex;flex-direction:column;gap:7px;}
-.bio-line{font-size:12px;color:var(--text2);}
+/* bio mockup — perfil de Instagram completo */
+.igp-topbar{display:flex;align-items:center;justify-content:space-between;padding:12px 14px;border-bottom:1px solid var(--border);}
+.igp-topbar .ic{width:14px;height:14px;color:var(--text2);}
+.igp-handle{font-size:12px;font-weight:700;color:#fff;}
+.igp-header{display:flex;align-items:center;gap:16px;padding:14px 16px 6px;}
+.igp-stats{display:flex;gap:16px;flex:1;}
+.igp-stat{display:flex;flex-direction:column;align-items:center;font-size:12.5px;font-weight:700;color:#fff;}
+.igp-stat span{font-size:9.5px;font-weight:400;color:var(--text2);margin-top:2px;}
+.igp-bio{padding:6px 16px 16px;text-align:left;}
+.igp-name{font-size:12.5px;font-weight:700;color:#fff;margin-bottom:6px;}
+.bio-line{font-size:11.5px;color:var(--text2);line-height:1.5;}
 .bio-line.highlight{font-weight:700;}
 
 /* ============ SEM SISTEMA VS COM SISTEMA ============ */
@@ -575,9 +581,9 @@ footer p{color:var(--text3);font-size:11.5px;}
 </section>
 
 <!-- ============================================================ SEM SISTEMA VS COM SISTEMA -->
-<section class="section section-light">
+<section class="section section-light" style="padding-bottom:20px;">
   <div class="container">
-    <div class="head-center reveal">
+    <div class="head-center reveal" style="margin-bottom:0;">
       <h2>Sem sistema vs. com&nbsp;sistema</h2>
     </div>
   </div>
@@ -590,9 +596,10 @@ footer p{color:var(--text3);font-size:11.5px;}
       <div class="compare-side reveal">
         <span class="compare-tag bad">Sem sistema</span>
         <div class="mini-mock">
-          <div class="post-mock-photo"><svg class="ic"><use href="#ic-home"/></svg></div>
-          <div class="post-mock-caption">
-            <div class="pmc-line1">R$ 450.000 · 3 quartos · 2 vagas</div>
+          <div class="post-mock">
+            <div class="post-mock-text">
+              <div class="pmc-line1">R$ 450.000 · 3 quartos · 2 vagas</div>
+            </div>
           </div>
         </div>
         <p class="compare-caption">Foto e preço do imóvel, sem dizer pra quem é aquele&nbsp;imóvel</p>
@@ -600,10 +607,11 @@ footer p{color:var(--text3);font-size:11.5px;}
       <div class="compare-side reveal">
         <span class="compare-tag good">Com sistema</span>
         <div class="mini-mock">
-          <div class="post-mock-photo"><svg class="ic"><use href="#ic-home"/></svg></div>
-          <div class="post-mock-caption">
-            <div class="pmc-line1 highlight">Pra quem busca tranquilidade sem abrir mão da localização</div>
-            <div class="pmc-line2">R$ 450.000 · 3 quartos</div>
+          <div class="post-mock">
+            <div class="post-mock-text">
+              <div class="pmc-line1 highlight">Pra quem busca tranquilidade sem abrir mão da&nbsp;localização</div>
+              <div class="pmc-line2">R$ 450.000 · 3 quartos</div>
+            </div>
           </div>
         </div>
         <p class="compare-caption">Cada post comunica pra quem é aquele imóvel — o comprador se reconhece antes de perguntar o&nbsp;preço</p>
@@ -619,8 +627,17 @@ footer p{color:var(--text3);font-size:11.5px;}
       <div class="compare-side reveal">
         <span class="compare-tag bad">Sem sistema</span>
         <div class="mini-mock">
-          <div class="bio-mock-row"><div class="pm-avatar"><svg class="ic"><use href="#ic-person"/></svg></div><div class="bio-mock-name">João Silva</div></div>
-          <div class="bio-mock-lines">
+          <div class="igp-topbar"><svg class="ic"><use href="#ic-arrow"/></svg><span class="igp-handle">joaosilva.corretor</span><svg class="ic"><use href="#ic-plus"/></svg></div>
+          <div class="igp-header">
+            <div class="pm-avatar"><svg class="ic"><use href="#ic-person"/></svg></div>
+            <div class="igp-stats">
+              <div class="igp-stat">352<span>publicações</span></div>
+              <div class="igp-stat">1,2mil<span>seguidores</span></div>
+              <div class="igp-stat">480<span>seguindo</span></div>
+            </div>
+          </div>
+          <div class="igp-bio">
+            <div class="igp-name">João Silva</div>
             <div class="bio-line">Corretor de imóveis</div>
             <div class="bio-line">CRECI ativo</div>
             <div class="bio-line">Atendo toda a cidade</div>
@@ -631,8 +648,17 @@ footer p{color:var(--text3);font-size:11.5px;}
       <div class="compare-side reveal">
         <span class="compare-tag good">Com sistema</span>
         <div class="mini-mock">
-          <div class="bio-mock-row"><div class="pm-avatar"><svg class="ic"><use href="#ic-person"/></svg></div><div class="bio-mock-name">João Silva</div></div>
-          <div class="bio-mock-lines">
+          <div class="igp-topbar"><svg class="ic"><use href="#ic-arrow"/></svg><span class="igp-handle">joaosilva.corretor</span><svg class="ic"><use href="#ic-plus"/></svg></div>
+          <div class="igp-header">
+            <div class="pm-avatar"><svg class="ic"><use href="#ic-person"/></svg></div>
+            <div class="igp-stats">
+              <div class="igp-stat">352<span>publicações</span></div>
+              <div class="igp-stat">1,2mil<span>seguidores</span></div>
+              <div class="igp-stat">480<span>seguindo</span></div>
+            </div>
+          </div>
+          <div class="igp-bio">
+            <div class="igp-name">João Silva</div>
             <div class="bio-line">Corretor de alto padrão</div>
             <div class="bio-line highlight grad-text">Especialista em Zona Sul</div>
             <div class="bio-line">+7 anos de mercado</div>
